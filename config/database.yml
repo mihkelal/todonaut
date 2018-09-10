@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: do-mihkel_production
+  database: miguelito
   username: mihkel
   password: 123
