@@ -6,7 +6,7 @@ ruby '2.6.0'
 gem 'bootsnap', require: false
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma'
-gem 'rails', '~> 5.2.1'
+gem 'rails', '= 5.2.2'
 gem 'sass-rails'
 gem 'slim-rails'
 gem 'turbolinks'
@@ -28,6 +28,5 @@ group :development do
   gem 'listen'
   gem 'pry-rails'
   gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'web-console', '>= 3.3.0'
+  gem 'spring-watcher-listen'
 end
