@@ -3,7 +3,9 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
-    "stimulus": "^1.1.0"
+    "caniuse-lite": "^1.0.30000923",
+    "stimulus": "^1.1.0",
+    "webpack": "^3.0.0"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"
