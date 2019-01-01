@@ -2,7 +2,7 @@ class NotesController < ApplicationController
   before_action :set_note, only: %i[show edit update destroy]
 
   def index
-    @notes = Note.all
+    @notes = Note.all.decorate
   end
 
   def show
@@ -41,7 +41,7 @@ class NotesController < ApplicationController
   private
 
   def set_note
-    @note = Note.find(params[:id])
+    @note = Note.find(params[:id]).decorate
   end
 
   def note_params

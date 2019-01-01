@@ -8,13 +8,13 @@ p
   = @note.description
 p
   strong> Started at:
-  = @note.started_at && l(@note.started_at, format: :long)
+  = @note.started_at
 p
   strong> Ended at:
-  = @note.ended_at && l(@note.ended_at, format: :long)
+  = @note.ended_at
 p
   strong> Completed at:
-  = @note.completed_at && l(@note.completed_at, format: :long)
+  = @note.completed_at
 
 => link_to('Edit', edit_note_path(@note))
 '|
