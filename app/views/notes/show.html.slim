@@ -1,21 +1,21 @@
 p#notice = notice
 
 p
-  strong Title:
+  strong> Title:
   = @note.title
 p
-  strong Description:
+  strong> Description:
   = @note.description
 p
-  strong Started at:
-  = @note.started_at
+  strong> Started at:
+  = @note.started_at && l(@note.started_at, format: :long)
 p
-  strong Ended at:
-  = @note.ended_at
+  strong> Ended at:
+  = @note.ended_at && l(@note.ended_at, format: :long)
 p
-  strong Completed at:
-  = @note.completed_at
+  strong> Completed at:
+  = @note.completed_at && l(@note.completed_at, format: :long)
 
-=> link_to 'Edit', edit_note_path(@note)
+=> link_to('Edit', edit_note_path(@note))
 '|
-=< link_to 'Back', notes_path
+=< link_to('Back', notes_path)

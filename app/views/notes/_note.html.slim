@@ -1,0 +1,7 @@
+tr
+  td = note.title
+  td = note.description
+  td = note.started_at && l(note.started_at, format: :long)
+  td = note.ended_at && l(note.ended_at, format: :long)
+  td = note.completed_at && l(note.completed_at, format: :long)
+  td = link_to('Show', note)
