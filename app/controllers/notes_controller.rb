@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  before_action :set_note, only: %i[show edit update destroy]
+  before_action :set_note, only: %i[show edit update destroy complete]
 
   def index
     @notes = Note.all.decorate
@@ -36,6 +36,16 @@ class NotesController < ApplicationController
   def destroy
     @note.destroy
     redirect_to notes_url, notice: 'Note was successfully destroyed.'
+  end
+
+  def complete
+    service = Notes::Complete.new(note: @note)
+    if service.save
+      flash[:notice] = 'Note was successfully marked as completed.'
+    else
+      flash[:alert] = 'Note was not marked as completed.'
+    end
+    redirect_to @note
   end
 
   private
