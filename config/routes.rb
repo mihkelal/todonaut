@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'hello_world/index'
 
-  resources :notes do
+  resources :notes, except: %i[destroy] do
     member do
       patch :complete
     end

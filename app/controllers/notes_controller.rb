@@ -33,11 +33,6 @@ class NotesController < ApplicationController
     end
   end
 
-  def destroy
-    @note.destroy
-    redirect_to notes_url, notice: 'Note successfully destroyed.'
-  end
-
   def complete
     service = Notes::Complete.new(note: @note)
     if service.save
