@@ -16,7 +16,7 @@ class NotesController < ApplicationController
     @note = Note.new(note_params)
 
     if @note.save
-      redirect_to @note, notice: 'Note was successfully created.'
+      redirect_to @note, notice: 'Note successfully created.'
     else
       render :new
     end
@@ -27,7 +27,7 @@ class NotesController < ApplicationController
 
   def update
     if @note.update(note_params)
-      redirect_to @note, notice: 'Note was successfully updated.'
+      redirect_to @note, notice: 'Note successfully updated.'
     else
       render :edit
     end
@@ -35,15 +35,15 @@ class NotesController < ApplicationController
 
   def destroy
     @note.destroy
-    redirect_to notes_url, notice: 'Note was successfully destroyed.'
+    redirect_to notes_url, notice: 'Note successfully destroyed.'
   end
 
   def complete
     service = Notes::Complete.new(note: @note)
     if service.save
-      flash[:notice] = 'Note was successfully marked as completed.'
+      flash[:notice] = 'Note successfully marked as completed.'
     else
-      flash[:alert] = 'Note was not marked as completed.'
+      flash[:alert] = "Note not marked as completed: #{service.errors.full_messages.join(', ')}"
     end
     redirect_to @note
   end
