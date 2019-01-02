@@ -15,11 +15,11 @@ class ApplicationService
     ApplicationRecord.transaction { perform }
   end
 
+  def perform
+  end
+
   private
 
   def before_validation
-  end
-
-  def perform
   end
 end
