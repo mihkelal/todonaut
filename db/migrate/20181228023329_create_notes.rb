@@ -1,6 +1,6 @@
 class CreateNotes < ActiveRecord::Migration[5.2]
   def change
-    create_table :notes do |t|
+    create_table :notes, id: :uuid do |t|
       t.string :title
       t.text :description
       t.timestamp :started_at

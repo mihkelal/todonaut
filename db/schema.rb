@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2018_12_28_023329) do
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
 
-  create_table "notes", force: :cascade do |t|
+  create_table "notes", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.datetime "started_at"
