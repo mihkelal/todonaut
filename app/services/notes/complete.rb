@@ -11,7 +11,7 @@ module Notes
     private
 
     def note_not_completed
-      errors.add(:base, :completed, message: 'Note already completed') if note.completed_at?
+      errors.add(:base, :completed, message: 'Note already completed') if note.completed?
     end
   end
 end
