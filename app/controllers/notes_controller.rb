@@ -2,7 +2,7 @@ class NotesController < ApplicationController
   before_action :set_note, only: %i[show edit update destroy complete]
 
   def index
-    @notes = Note.all.decorate
+    @notes = Note.not_ended.not_completed.decorate
   end
 
   def show
