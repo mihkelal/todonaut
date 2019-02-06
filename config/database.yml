@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: todonaut_production
-  username: mihkel
-  password: 123
+  username: app
+  password: app
