@@ -1,5 +1,5 @@
 {
-  "name": "do-mihkel",
+  "name": "todonaut",
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
