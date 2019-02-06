@@ -1,11 +1,10 @@
 class NotesController < ApplicationController
-  before_action :set_note, only: %i[show edit update destroy complete]
-
   def index
     @notes = Note.not_ended.not_completed.decorate
   end
 
   def show
+    @note = Note.find(params[:id]).decorate
   end
 
   def new
@@ -23,9 +22,11 @@ class NotesController < ApplicationController
   end
 
   def edit
+    @note = Note.find(params[:id])
   end
 
   def update
+    @note = Note.find(params[:id])
     if @note.update(note_params)
       redirect_to @note, notice: 'Note successfully updated.'
     else
@@ -34,6 +35,7 @@ class NotesController < ApplicationController
   end
 
   def complete
+    @note = Note.find(params[:id])
     service = Notes::Complete.new(note: @note)
     if service.save
       flash[:notice] = 'Note successfully marked as completed.'
@@ -44,10 +46,6 @@ class NotesController < ApplicationController
   end
 
   private
-
-  def set_note
-    @note = Note.find(params[:id]).decorate
-  end
 
   def note_params
     params.require(:note).permit(:title, :description, :started_at, :ended_at)
