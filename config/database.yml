@@ -82,4 +82,4 @@ production:
   <<: *default
   database: todonaut_production
   username: app
-  password: app
+  password: <%= Rails.application.credentials.database[:password] %>
