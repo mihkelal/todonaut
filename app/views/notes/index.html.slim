@@ -1,0 +1,17 @@
+h1 Listing notes
+
+table
+  thead
+    tr
+      th Title
+      th Description
+      th Started at
+      th Ended at
+      th Completed at
+      th
+
+  tbody
+    - @notes.each do |note|
+      = render note
+
+= link_to('New Note', new_note_path)
