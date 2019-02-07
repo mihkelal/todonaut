@@ -10,7 +10,6 @@ gem 'puma'
 gem 'rails', '= 5.2.2'
 gem 'sass-rails'
 gem 'slim-rails'
-gem 'turbolinks'
 gem 'uglifier'
 gem 'webpacker'
 

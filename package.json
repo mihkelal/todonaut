@@ -5,6 +5,7 @@
     "@rails/webpacker": "3.5",
     "caniuse-lite": "^1.0.30000923",
     "stimulus": "^1.1.0",
+    "turbolinks": "5.2.0",
     "webpack": "^3.0.0"
   },
   "devDependencies": {
