@@ -4,6 +4,7 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "caniuse-lite": "1.0.30000935",
+    "rails-ujs": "5.2.2",
     "stimulus": "1.1.1",
     "turbolinks": "5.2.0",
     "webpack": "^3.0.0"
