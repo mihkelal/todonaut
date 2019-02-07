@@ -13,6 +13,7 @@ import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"
 import Rails from 'rails-ujs';
 import Turbolinks from 'turbolinks';
+import * as ActiveStorage from 'activestorage';
 import 'app/app.scss';
 
 const application = Application.start()
@@ -20,3 +21,4 @@ const context = require.context("controllers", true, /.js$/)
 application.load(definitionsFromContext(context))
 Rails.start();
 Turbolinks.start();
+ActiveStorage.start();
