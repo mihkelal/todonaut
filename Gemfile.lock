@@ -233,7 +233,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen
   uglifier
-  webpacker
+  webpacker (~> 3)
 
 RUBY VERSION
    ruby 2.6.0p0
