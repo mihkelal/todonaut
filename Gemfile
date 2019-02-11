@@ -8,11 +8,8 @@ gem 'draper'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma'
 gem 'rails', '= 5.2.2'
-gem 'sass-rails'
 gem 'slim-rails'
-gem 'turbolinks'
-gem 'uglifier'
-gem 'webpacker'
+gem 'webpacker', '~> 3' # 3.x does not support npm package webpack 4.x. Will be fixed in 4.x.
 
 group :development, :test do
   gem 'pry-byebug'
