@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Note < ApplicationRecord
   scope :started, -> { where(started_arel) }
   scope :not_started, -> { where(started_arel.not) }

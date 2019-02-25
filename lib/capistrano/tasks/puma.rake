@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
   task :make_dirs do

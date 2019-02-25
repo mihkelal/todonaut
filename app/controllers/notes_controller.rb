@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class NotesController < ApplicationController
   def index
     @notes = Note.not_ended.not_completed.decorate

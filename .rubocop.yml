@@ -1,0 +1,42 @@
+# Defaults https://github.com/bbatsov/rubocop/blob/master/config/default.yml
+
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - node_modules/**/*
+  TargetRubyVersion: 2.6.2
+  TargetRailsVersion: 5.2.2
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Exclude:
+    - db/migrate/*.rb
+  Max: 15
+
+Rails:
+  Enabled: true
+
+Rails/SkipsModelValidations:
+  Exclude:
+    - db/migrate/*
+
+Style/MixinUsage:
+  Exclude:
+    - bin/**
+
+Style/Documentation:
+  Enabled: false
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    default: ()
+    '%i': '[]'
+    '%I': '[]'
+    '%r': '{}'
+    '%w': '[]'
+    '%W': '[]'

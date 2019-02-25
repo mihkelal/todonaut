@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :deploy do
   desc 'Initial Deploy'
   task :initial do
