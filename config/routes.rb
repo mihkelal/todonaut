@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   get 'hello_world/index'
 
+  get 'register', controller: :users, action: :new
+  post 'register', controller: :users, action: :create
+
   resources :notes, except: %i[destroy] do
     member do
       patch :complete
