@@ -14,6 +14,11 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    session.delete(:user_id)
+    redirect_to notes_path, notice: 'Successfully logged out'
+  end
+
   private
 
   def user

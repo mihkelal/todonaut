@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post 'register', controller: :users, action: :create
   get 'login', controller: :sessions, action: :new
   post 'login', controller: :sessions, action: :create
+  delete 'logout', controller: :sessions, action: :destroy
 
   resources :notes, except: %i[destroy] do
     member do
