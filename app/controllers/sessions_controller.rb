@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   def create
     @login = Sessions::Login.new(login_params.merge(session: session))
     if @login.save
-      redirect_to notes_path, notice: 'Successfully logged in'
+      redirect_to notes_path, notice: 'Successfully logged in.'
     else
       render :new
     end
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session.delete(:user_id)
-    redirect_to notes_path, notice: 'Successfully logged out'
+    redirect_to notes_path, notice: 'Successfully logged out.'
   end
 
   private
