@@ -2,13 +2,13 @@
 
 class UsersController < ApplicationController
   def new
-    @user = User.new
+    @user = Users::Create.new
   end
 
   def create
-    @user = User.new(user_params)
+    @user = Users::Create.new(user_params.merge(session: session))
     if @user.save
-      redirect_to notes_path, notice: 'User successfully created.'
+      redirect_to notes_path, notice: 'Successfully registered.'
     else
       render :new
     end
