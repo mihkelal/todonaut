@@ -1,13 +1,19 @@
 h1 Log in
 
-= form_tag(login_path) do
+= form_for(@login, as: :user, url: login_path) do |f|
+  - if @login.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@login.errors.count, "error")} prohibited logging in:"
+      ul
+        - @login.errors.full_messages.each do |message|
+          li = message
+
   .field
-    => label_tag(:username)
-    = text_field_tag(:username)
+    => f.label(:username)
+    = f.text_field(:username)
   .field
-    => label_tag(:password)
-    = password_field_tag(:password)
-  .actions
-    => submit_tag('Submit')
+    => f.label(:password)
+    = f.password_field(:password)
+  .actions => f.submit('Log in')
 
 = link_to('Back', notes_path)

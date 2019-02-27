@@ -2,14 +2,14 @@
 
 class SessionsController < ApplicationController
   def new
+    @login = Sessions::Login.new
   end
 
   def create
-    if user.present?
-      session[:user_id] = user&.id
+    @login = Sessions::Login.new(login_params.merge(session: session))
+    if @login.save
       redirect_to notes_path, notice: 'Successfully logged in'
     else
-      flash.now[:alert] = 'Incorrect username or password'
       render :new
     end
   end
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
 
   private
 
-  def user
-    User.find_by(username: params[:username])&.authenticate(params[:username])
+  def login_params
+    params.require(:user).permit(:username, :password)
   end
 end
