@@ -24,9 +24,4 @@ class ApplicationService
 
   def before_validation
   end
-
-  def add_errors_and_raise!(entity)
-    errors.merge!(entity.errors)
-    raise ActiveRecord::RecordInvalid, self
-  end
 end

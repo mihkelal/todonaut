@@ -12,7 +12,8 @@ module Users
       if user.save
         log_user_in
       else
-        add_errors_and_raise!(user)
+        add_errors
+        raise ActiveRecord::RecordInvalid, self
       end
     end
 
@@ -24,6 +25,10 @@ module Users
 
     def log_user_in
       session[:user_id] = user.id
+    end
+
+    def add_errors
+      errors.merge!(user.errors)
     end
   end
 end
