@@ -2,13 +2,13 @@
 
 class UsersController < ApplicationController
   def new
-    @user = Users::Create.new
+    @register = Register.new
   end
 
   def create
-    @user = Users::Create.new(user_params)
-    if @user.save
-      helpers.log_in(@user.user)
+    @register = Register.new(user_params)
+    if @register.save
+      helpers.log_in(@register.user)
       redirect_to notes_path, notice: 'Successfully registered.'
     else
       render :new

@@ -2,11 +2,11 @@
 
 class SessionsController < ApplicationController
   def new
-    @login = Sessions::Login.new
+    @login = Login.new
   end
 
   def create
-    @login = Sessions::Login.new(login_params)
+    @login = Login.new(user_params)
     if @login.save
       helpers.log_in(@login.user)
       redirect_to notes_path, notice: 'Successfully logged in.'
@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
 
   private
 
-  def login_params
+  def user_params
     params.require(:user).permit(:username, :password)
   end
 end
