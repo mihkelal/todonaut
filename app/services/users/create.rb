@@ -2,30 +2,24 @@
 
 module Users
   class Create < ApplicationService
-    attr_accessor :username, :password, :password_confirmation, :session
+    attr_accessor :username, :password, :password_confirmation
 
     validates :username, presence: true
     validates :password, presence: true
     validates :password_confirmation, presence: true
 
     def perform
-      if user.save
-        log_user_in
-      else
-        add_errors
-        raise ActiveRecord::RecordInvalid, self
-      end
-    end
+      return true if user.save
 
-    private
+      add_errors
+      raise ActiveRecord::RecordInvalid, self
+    end
 
     def user
       @user ||= User.new(username: username, password: password, password_confirmation: password_confirmation)
     end
 
-    def log_user_in
-      session[:user_id] = user.id
-    end
+    private
 
     def add_errors
       errors.merge!(user.errors)

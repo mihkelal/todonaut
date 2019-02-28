@@ -6,8 +6,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = Users::Create.new(user_params.merge(session: session))
+    @user = Users::Create.new(user_params)
     if @user.save
+      helpers.log_in(@user.user)
       redirect_to notes_path, notice: 'Successfully registered.'
     else
       render :new

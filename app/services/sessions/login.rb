@@ -2,18 +2,20 @@
 
 module Sessions
   class Login < ApplicationService
-    attr_accessor :username, :password, :session
+    attr_accessor :username, :password
 
     validates :username, presence: true
     validates :password, presence: true
 
     def perform
-      if authentication_successful?
-        session[:user_id] = user&.id
-      else
-        errors.add(:base, 'Incorrect username or password')
-        false
-      end
+      return true if authentication_successful?
+
+      add_errors
+      false
+    end
+
+    def user
+      @user ||= User.find_by(username: username)&.authenticate(password)
     end
 
     private
@@ -22,8 +24,8 @@ module Sessions
       user.present?
     end
 
-    def user
-      User.find_by(username: username)&.authenticate(password)
+    def add_errors
+      errors.add(:base, 'Incorrect username or password')
     end
   end
 end
