@@ -5,11 +5,13 @@ Rails.application.routes.draw do
 
   get 'hello_world/index'
 
-  get 'register', controller: :users, action: :new
-  post 'register', controller: :users, action: :create
-  get 'login', controller: :sessions, action: :new
-  post 'login', controller: :sessions, action: :create
-  delete 'logout', controller: :sessions, action: :destroy
+  resource :register, only: %i[create], controller: :users do
+    get :new
+  end
+  resource :login, only: %i[create], controller: :sessions do
+    get :new
+  end
+  resource :logout, only: %i[destroy], controller: :sessions
 
   resources :notes, except: %i[destroy] do
     member do
