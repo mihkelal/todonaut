@@ -50,6 +50,7 @@ GEM
       sshkit (>= 1.6.1, != 1.7.0)
     arel (9.0.0)
     awesome_print (1.8.0)
+    bcrypt (3.1.12)
     better_errors (2.5.0)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
@@ -200,6 +201,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  bcrypt
   better_errors
   bootsnap
   capistrano
