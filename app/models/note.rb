@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Note < ApplicationRecord
+  belongs_to :user, optional: true
+
   scope :started, -> { where(started_arel) }
   scope :not_started, -> { where(started_arel.not) }
   scope :ended, -> { where(ended_arel) }
