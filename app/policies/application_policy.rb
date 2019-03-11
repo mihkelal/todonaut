@@ -48,4 +48,10 @@ class ApplicationPolicy
   def destroy?
     false
   end
+
+  private
+
+  def logged_in?
+    user.present?
+  end
 end
