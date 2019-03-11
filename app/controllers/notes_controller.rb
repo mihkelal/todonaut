@@ -2,11 +2,12 @@
 
 class NotesController < ApplicationController
   def index
-    @notes = Note.not_ended.not_completed.decorate
+    @notes = policy_scope(Note).decorate
   end
 
   def show
     @note = Note.find(params[:id]).decorate
+    authorize(@note)
   end
 
   def new
@@ -25,10 +26,14 @@ class NotesController < ApplicationController
 
   def edit
     @note = Note.find(params[:id])
+    authorize(@note)
+
   end
 
   def update
     @note = Note.find(params[:id])
+    authorize(@note)
+
     if @note.update(note_params)
       redirect_to @note, notice: 'Note successfully updated.'
     else
@@ -38,18 +43,21 @@ class NotesController < ApplicationController
 
   def complete
     @note = Note.find(params[:id])
+    authorize(@note)
+
     service = Notes::Complete.new(note: @note)
     if service.save
       flash[:notice] = 'Note successfully marked as completed.'
+      redirect_to notes_path
     else
       flash[:alert] = "Note not marked as completed: #{service.errors.full_messages.join(', ')}"
+      redirect_to @note
     end
-    redirect_to @note
   end
 
   private
 
   def note_params
-    params.require(:note).permit(:title, :description, :started_at, :ended_at).merge(user: helpers.current_user)
+    params.require(:note).permit(:title, :description, :started_at, :ended_at).merge(user: current_user)
   end
 end
