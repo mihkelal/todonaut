@@ -2,6 +2,6 @@
 
 * Rails version: 5.2.2
 
-* Ruby version: 2.6.0
+* Ruby version: 2.6.2
 
 * Database: Postgresql

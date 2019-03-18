@@ -2,15 +2,15 @@
   "name": "todonaut",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "3.5",
+    "@rails/webpacker": "4.0",
     "activestorage": "5.2.2",
-    "caniuse-lite": "1.0.30000935",
+    "caniuse-lite": "1.0.30000950",
     "rails-ujs": "5.2.2",
     "stimulus": "1.1.1",
     "turbolinks": "5.2.0",
-    "webpack": "^3.0.0"
+    "webpack": "4.29.6"
   },
   "devDependencies": {
-    "webpack-dev-server": "2.11.2"
+    "webpack-dev-server": "3.2.1"
   }
 }

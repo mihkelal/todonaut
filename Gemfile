@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.0'
+ruby '2.6.2'
 
 gem 'bcrypt'
 gem 'bootsnap', require: false
@@ -13,7 +13,7 @@ gem 'puma'
 gem 'pundit'
 gem 'rails', '= 5.2.2'
 gem 'slim-rails'
-gem 'webpacker', '~> 3' # 3.x does not support npm package webpack 4.x. Will be fixed in 4.x.
+gem 'webpacker'
 
 group :development, :test do
   gem 'pry-byebug'
