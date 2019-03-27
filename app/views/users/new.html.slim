@@ -3,7 +3,7 @@ h1 Register
 = form_for(@register, as: :user, url: register_path(@register)) do |f|
   - if @register.errors.any?
     #error_explanation
-      h2 = "#{pluralize(@register.errors.count, "error")} prohibited registration:"
+      h2 = "#{pluralize(@register.errors.count, 'error')} prohibited registration:"
       ul
         - @register.errors.full_messages.each do |message|
           li = message
