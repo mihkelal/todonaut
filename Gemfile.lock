@@ -191,6 +191,9 @@ GEM
     turbolinks (5.2.0)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
+    turbolinks_render (0.9.13)
+      rails (>= 5.2.0)
+      turbolinks-source (~> 5.1)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     webpacker (4.0.2)
@@ -226,6 +229,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen
   turbolinks
+  turbolinks_render
   webpacker
 
 RUBY VERSION
