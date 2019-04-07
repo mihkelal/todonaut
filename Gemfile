@@ -13,6 +13,8 @@ gem 'puma'
 gem 'pundit'
 gem 'rails', '= 5.2.2'
 gem 'slim-rails'
+gem 'turbolinks'
+gem 'turbolinks_render'
 gem 'webpacker'
 
 group :development, :test do

@@ -1,6 +1,6 @@
 h1 Log in
 
-= form_for(@login, as: :user, url: login_path) do |f|
+= form_with(model: @login, scope: :user, url: login_path) do |f|
   - if @login.errors.any?
     #error_explanation
       h2 = "#{pluralize(@login.errors.count, 'error')} prohibited logging in:"
