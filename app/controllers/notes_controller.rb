@@ -27,7 +27,6 @@ class NotesController < ApplicationController
   def edit
     @note = Note.find(params[:id])
     authorize(@note)
-
   end
 
   def update

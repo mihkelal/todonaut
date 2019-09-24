@@ -1,6 +1,6 @@
 # DigitalOcean mihkli.ga
 
-* Rails version: 5.2.2
+* Rails version: 6.0.0
 
 * Ruby version: 2.6.2
 
