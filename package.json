@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "4.0",
-    "activestorage": "5.2.2",
+    "@rails/activestorage": "6.0.0",
     "caniuse-lite": "1.0.30000950",
     "rails-ujs": "5.2.2",
     "stimulus": "1.1.1",
