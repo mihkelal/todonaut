@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Note < ApplicationRecord
+  has_many_attached :files
+
   belongs_to :user, optional: true
 
   scope :started, -> { where(started_arel) }

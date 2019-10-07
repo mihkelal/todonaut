@@ -2,7 +2,7 @@
 
 class NotesController < ApplicationController
   def index
-    @notes = policy_scope(Note).decorate
+    @notes = policy_scope(Note.with_attached_files).decorate
   end
 
   def show
@@ -57,6 +57,6 @@ class NotesController < ApplicationController
   private
 
   def note_params
-    params.require(:note).permit(:title, :description, :started_at, :ended_at).merge(user: current_user)
+    params.require(:note).permit(:title, :description, :started_at, :ended_at, files: []).merge(user: current_user)
   end
 end
