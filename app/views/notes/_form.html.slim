@@ -20,6 +20,6 @@
     = f.datetime_field(:ended_at)
   .field
     => f.label(:files)
-    = f.file_field(:files, multiple: true)
+    = f.file_field(:files, multiple: true, direct_upload: true)
 
   .actions = f.submit
