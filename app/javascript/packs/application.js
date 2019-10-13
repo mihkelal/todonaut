@@ -15,6 +15,7 @@ require('@rails/ujs').start()
 require('turbolinks').start()
 require('@rails/activestorage').start()
 import 'app/app.scss';
+import 'utils/direct_uploads.js'
 
 const application = Application.start()
 const context = require.context('controllers', true, /.js$/)

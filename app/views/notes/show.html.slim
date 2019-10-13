@@ -13,6 +13,10 @@ p
 p
   strong> Completed at:
   = @note.completed_at
+p
+  strong> Files:
+  - @note.files.each do |file|
+    p => link_to(file.filename, rails_blob_path(file))
 
 => link_to('Edit', edit_note_path(@note))
 '|
