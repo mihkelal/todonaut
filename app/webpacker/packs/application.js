@@ -7,16 +7,11 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-console.log('Hello World from Webpacker')
+console.log('Hello World from Webpacker');
 
-import { Application } from 'stimulus'
-import { definitionsFromContext } from 'stimulus/webpack-helpers'
-require('@rails/ujs').start()
-require('turbolinks').start()
-require('@rails/activestorage').start()
-import 'app/app.scss';
-import 'utils/direct_uploads.js'
+require('@rails/ujs').start();
+require('turbolinks').start();
+require('@rails/activestorage').start();
 
-const application = Application.start()
-const context = require.context('controllers', true, /.js$/)
-application.load(definitionsFromContext(context))
+import '../javascripts';
+import '../stylesheets';
