@@ -1,8 +1,9 @@
 doctype html
 html
   = render 'layouts/head'
-  body
+  body.text-brand-black
     = render 'layouts/header/base'
     = render 'layouts/partials/flash'
-    main
-      = yield
+    main.bg-brand-grain.min-h-screen
+      .p-20 class='w-1/2'
+        = yield

@@ -8,6 +8,9 @@ module.exports = {
           grain: '#D7CEC7',
           tan: '#C09F80',
         }
+      },
+      spacing: {
+        half: '50%',
       }
     }
   },

@@ -1,18 +1,7 @@
-h1 Listing notes
-
-table
-  thead
-    tr
-      th Title
-      th Description
-      th Started at
-      th Ended at
-      th Completed at
-      th Files
-      th
-
-  tbody
+.border.p-2.bg-gray-200
+  h1.text-3xl.font-bold.border-b.border-brand-black Listing notes
+  .mt-4
     - @notes.each do |note|
       = render note
 
-= link_to('New Note', new_note_path)
+. = link_to('New Note', new_note_path)
