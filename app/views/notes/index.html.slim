@@ -1,7 +1,6 @@
 .border.p-2.bg-gray-200
-  h1.text-3xl.font-bold.border-b.border-brand-black Listing notes
+  .flex.justify-between.px-2.border-b.border-brand-black.text-3xl
+    h1.font-bold Listing notes
+    = link_to('+', new_note_path)
   .mt-4
-    - @notes.each do |note|
-      = render note
-
-. = link_to('New Note', new_note_path)
+    ul = render @notes
