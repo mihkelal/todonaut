@@ -1,27 +1,35 @@
 article
-  p
-    strong> Title:
-    = @note.title
-  p
-    strong> Description:
-    = @note.description
-  p
-    strong> Started at:
-    = @note.started_at
-  p
-    strong> Ended at:
-    = @note.ended_at
-  p
-    strong> Completed at:
-    = @note.completed_at
-  p
-    strong> Files:
-    - @note.files.each do |file|
-      p => link_to(file.filename, rails_blob_path(file))
-
-  => link_to('Edit', edit_note_path(@note))
-  '|
-  => link_to('Back', notes_path)
-  - unless @note.completed?
-    '|
-    = link_to('Mark as completed', complete_note_path(@note), method: :patch, remote: true)
+  .border.p-2.bg-gray-200
+    .px-2.border-b.border-brand-black.text-3xl
+      h1.font-bold = @note.title
+    .mt-4
+      .md_mx-8.overflow-auto
+        table.w-full
+          tbody
+            tr
+              th.border.border-brand-black.p-2.text-left Title
+              td.border.border-brand-black.p-2 = @note.title
+            tr
+              th.border.border-brand-black.p-2.text-left Description
+              td.border.border-brand-black.p-2 = @note.description
+            tr
+              th.border.border-brand-black.p-2.text-left Started at
+              td.border.border-brand-black.p-2 = @note.started_at
+            tr
+              th.border.border-brand-black.p-2.text-left Ended at
+              td.border.border-brand-black.p-2 = @note.ended_at
+            tr
+              th.border.border-brand-black.p-2.text-left Completed at
+              td.border.border-brand-black.p-2 = @note.completed_at
+            tr
+              th.border.border-brand-black.p-2.text-left Files
+              td.border.border-brand-black.p-2
+                - @note.files.each do |file|
+                  = link_to(file.filename, rails_blob_path(file))
+      .pt-4
+        => link_to('Edit', edit_note_path(@note), class: 'underline')
+        '|
+        => link_to('Back', notes_path, class: 'underline')
+        - unless @note.completed?
+          '|
+          = link_to('Mark as completed', complete_note_path(@note), class: 'underline' , method: :patch, remote: true)
