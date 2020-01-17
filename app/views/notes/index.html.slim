@@ -3,4 +3,4 @@
     h1.font-bold Listing notes
     = link_to('+', new_note_path)
   .mt-4
-    ul = render @notes
+    ul.md_mx-4.overflow-auto.list-inside.list-disc = render @notes
