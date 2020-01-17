@@ -1,35 +1,36 @@
-article
-  .p-2.rounded.bg-gray-200
-    .px-2.border-b.border-brand-black.text-3xl
-      h1.font-bold = @note.title
-    .mt-4
-      .md_mx-8.overflow-auto
-        table.w-full
-          tbody
-            tr
-              th.border.border-brand-black.p-2.text-left Title
-              td.border.border-brand-black.p-2 = @note.title
-            tr
-              th.border.border-brand-black.p-2.text-left Description
-              td.border.border-brand-black.p-2 = @note.description
-            tr
-              th.border.border-brand-black.p-2.text-left Started at
-              td.border.border-brand-black.p-2 = @note.started_at
-            tr
-              th.border.border-brand-black.p-2.text-left Ended at
-              td.border.border-brand-black.p-2 = @note.ended_at
-            tr
-              th.border.border-brand-black.p-2.text-left Completed at
-              td.border.border-brand-black.p-2 = @note.completed_at
-            tr
-              th.border.border-brand-black.p-2.text-left Files
-              td.border.border-brand-black.p-2
-                - @note.files.each do |file|
-                  = link_to(file.filename, rails_blob_path(file), class: 'underline')
-      .pt-4
-        => link_to('Edit', edit_note_path(@note), class: 'underline')
-        '|
-        => link_to('Back', notes_path, class: 'underline')
-        - unless @note.completed?
+.p-4.md_p-10.lg_p-20
+  article
+    .p-2.rounded.bg-gray-200
+      .px-2.border-b.border-brand-black.text-3xl
+        h1.font-bold = @note.title
+      .mt-4
+        .md_mx-8.overflow-auto
+          table.w-full
+            tbody
+              tr
+                th.border.border-brand-black.p-2.text-left Title
+                td.border.border-brand-black.p-2 = @note.title
+              tr
+                th.border.border-brand-black.p-2.text-left Description
+                td.border.border-brand-black.p-2 = @note.description
+              tr
+                th.border.border-brand-black.p-2.text-left Started at
+                td.border.border-brand-black.p-2 = @note.started_at
+              tr
+                th.border.border-brand-black.p-2.text-left Ended at
+                td.border.border-brand-black.p-2 = @note.ended_at
+              tr
+                th.border.border-brand-black.p-2.text-left Completed at
+                td.border.border-brand-black.p-2 = @note.completed_at
+              tr
+                th.border.border-brand-black.p-2.text-left Files
+                td.border.border-brand-black.p-2
+                  - @note.files.each do |file|
+                    = link_to(file.filename, rails_blob_path(file), class: 'underline')
+        .pt-4
+          => link_to('Edit', edit_note_path(@note), class: 'underline')
           '|
-          = link_to('Mark as completed', complete_note_path(@note), class: 'underline' , method: :patch, remote: true)
+          => link_to('Back', notes_path, class: 'underline')
+          - unless @note.completed?
+            '|
+            = link_to('Mark as completed', complete_note_path(@note), class: 'underline' , method: :patch, remote: true)
