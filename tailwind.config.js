@@ -10,7 +10,7 @@ module.exports = {
           tan: '#C09F80',
         }
       },
-      spacing: {
+      width: {
         half: '50%',
       }
     }

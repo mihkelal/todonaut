@@ -6,20 +6,21 @@
         - note.errors.full_messages.each do |message|
           li = message
 
-  .field
-    => f.label(:title)
-    = f.text_field(:title)
-  .field
-    => f.label(:description)
-    = f.text_area(:description)
-  .field
-    => f.label(:started_at)
-    = f.datetime_field(:started_at)
-  .field
-    => f.label(:ended_at)
-    = f.datetime_field(:ended_at)
-  .field
-    => f.label(:files)
-    = f.file_field(:files, multiple: true, direct_upload: true)
+  .lg_w-half
+    .field
+      => f.label(:title, class: 'block font-bold')
+      = f.text_field(:title, class: 'block w-full p-1 border border-brand-black rounded')
+    .field.mt-2
+      => f.label(:description, class: 'block font-bold')
+      = f.text_area(:description, class: 'block w-full p-1 border border-brand-black rounded')
+    .field.mt-2
+      => f.label(:started_at, class: 'block font-bold')
+      = f.datetime_field(:started_at, class: 'block w-full p-1 border border-brand-black rounded')
+    .field.mt-2
+      => f.label(:ended_at, class: 'block font-bold')
+      = f.datetime_field(:ended_at, class: 'block w-full p-1 border border-brand-black rounded')
+    .field.mt-2
+      => f.label(:files, class: 'block font-bold')
+      = f.file_field(:files, multiple: true, direct_upload: true, class: 'block')
 
-  .actions = f.submit
+    .actions.mt-4 = f.submit(class: 'p-2 rounded bg-brand-grain cursor-pointer')
