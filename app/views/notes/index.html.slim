@@ -1,6 +1,5 @@
 .p-2.rounded.bg-gray-200
-  .flex.justify-between.px-2.border-b.border-brand-black.text-3xl
+  .px-2.border-b.border-brand-black.text-3xl
     h1.font-bold Listing notes
-    = link_to('+', new_note_path)
-  .mt-4
-    ul.md_mx-4.overflow-auto.list-inside.list-disc = render @notes
+  ul.mt-4.md_mx-4.overflow-auto.list-inside.list-disc = render @notes
+  .m-4 = link_to('Add new note', new_note_path, class: 'p-2 rounded bg-brand-grain cursor-pointer')
