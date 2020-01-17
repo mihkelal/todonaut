@@ -12,7 +12,7 @@
                 td.border.border-brand-black.p-2 = @note.title
               tr
                 th.border.border-brand-black.p-2.text-left Description
-                td.border.border-brand-black.p-2 = @note.description
+                td.border.border-brand-black.p-2 = simple_format(h(@note.description))
               tr
                 th.border.border-brand-black.p-2.text-left Started at
                 td.border.border-brand-black.p-2 = @note.started_at
