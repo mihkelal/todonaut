@@ -25,7 +25,7 @@ article
               th.border.border-brand-black.p-2.text-left Files
               td.border.border-brand-black.p-2
                 - @note.files.each do |file|
-                  = link_to(file.filename, rails_blob_path(file))
+                  = link_to(file.filename, rails_blob_path(file), class: 'underline')
       .pt-4
         => link_to('Edit', edit_note_path(@note), class: 'underline')
         '|
