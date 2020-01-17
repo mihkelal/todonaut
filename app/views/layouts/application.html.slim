@@ -1,9 +1,9 @@
 doctype html
 html
   = render 'layouts/head'
-  body.text-brand-black
+  body.bg-brand-grain.text-brand-black
     = render 'layouts/header/base'
     = render 'layouts/partials/flash'
-    main.bg-brand-grain.min-h-screen
+    main
       .p-4.md_p-10.lg_p-20
         = yield
