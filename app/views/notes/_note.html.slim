@@ -1,2 +1,6 @@
 li
-  = link_to(note.title, note, class: 'underline')
+  = link_to(note, class: 'block truncate underline') do
+    => note.title.presence || '(No title)'
+    span.text-gray-500
+      | -
+      =< truncate(note.description, length: 200)
