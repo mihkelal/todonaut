@@ -9,9 +9,6 @@ module.exports = {
           grain: '#D7CEC7',
           tan: '#C09F80',
         }
-      },
-      width: {
-        half: '50%',
       }
     }
   },
