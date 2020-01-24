@@ -1,4 +1,7 @@
-- if logged_in?
-  = render 'layouts/header/logged_in'
-- else
-  = render 'layouts/header/not_logged_in'
+header.bg-gray-200.p-4.flex.items-center.justify-between
+  = link_to('Todonaut', root_path, class: 'text-xl font-semibold')
+  .
+    - if logged_in?
+      = render 'layouts/header/logged_in'
+    - else
+      = render 'layouts/header/not_logged_in'

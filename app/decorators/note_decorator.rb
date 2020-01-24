@@ -3,6 +3,10 @@
 class NoteDecorator < Draper::Decorator
   delegate_all
 
+  def title
+    super.presence || '(No title)'
+  end
+
   def started_at
     object.started_at && l(object.started_at, format: :long)
   end

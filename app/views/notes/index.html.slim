@@ -1,18 +1,6 @@
-h1 Listing notes
-
-table
-  thead
-    tr
-      th Title
-      th Description
-      th Started at
-      th Ended at
-      th Completed at
-      th Files
-      th
-
-  tbody
-    - @notes.each do |note|
-      = render note
-
-= link_to('New Note', new_note_path)
+.p-4.md_p-10.lg_p-20
+  .p-2.rounded.bg-gray-200
+    .px-2.border-b.border-brand-black.text-3xl
+      h1.font-bold Listing notes
+    ul.mt-4.md_mx-4.pl-6.overflow-auto.list-outside.list-disc = render @notes
+    .m-4 = link_to('Add new note', new_note_path, class: 'p-2 rounded bg-brand-grain cursor-pointer')

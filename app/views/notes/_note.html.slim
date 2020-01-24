@@ -1,8 +1,6 @@
-tr
-  td = note.title
-  td = note.description
-  td = note.started_at
-  td = note.ended_at
-  td = note.completed_at
-  td = note.files.size
-  td = link_to('Show', note)
+li
+  = link_to(note, class: 'block truncate underline') do
+    => note.title
+    span.text-gray-500
+      | -
+      =< truncate(note.description, length: 200)

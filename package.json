@@ -7,10 +7,12 @@
     "@rails/webpacker": "~4.2",
     "caniuse-lite": "~1.0.30001022",
     "stimulus": "~1.1.1",
+    "tailwindcss": "~1.1.4",
     "turbolinks": "~5.2.0",
     "webpack": "~4.41.5"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "~2.0.5",
     "webpack-dev-server": "~3.10.1"
   },
   "version": "0.1.0"

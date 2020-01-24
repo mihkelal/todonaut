@@ -1,19 +1,25 @@
-h1 Log in
+.sm_flex.sm_justify-center
+  .p-4.sm_pt-20
+    .p-2.rounded.bg-gray-200
+      .px-2.border-b.border-brand-black.text-3xl
+        h1.font-bold Log in
+      .mt-4
+        .sm_mx-4.overflow-auto
+          = form_with(model: @login, scope: :user, url: login_path) do |f|
+            - if @login.errors.any?
+              #error_explanation
+                h2 = "#{pluralize(@login.errors.count, 'error')} prohibited logging in:"
+                ul
+                  - @login.errors.full_messages.each do |message|
+                    li = message
 
-= form_with(model: @login, scope: :user, url: login_path) do |f|
-  - if @login.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@login.errors.count, 'error')} prohibited logging in:"
-      ul
-        - @login.errors.full_messages.each do |message|
-          li = message
+            .field
+              => f.label(:username, class: 'block font-bold')
+              = f.text_field(:username, class: 'block w-full p-1 border border-brand-black rounded')
+            .field.mt-2
+              => f.label(:password, class: 'block font-bold')
+              = f.password_field(:password, class: 'block w-full p-1 border border-brand-black rounded')
+            .actions.mt-4 = f.submit('Log in', class: 'p-2 rounded bg-brand-grain cursor-pointer')
 
-  .field
-    => f.label(:username)
-    = f.text_field(:username)
-  .field
-    => f.label(:password)
-    = f.password_field(:password)
-  .actions => f.submit('Log in')
-
-= link_to('Back', notes_path)
+        .pt-4
+          => link_to('Back', root_path, class: 'underline')
