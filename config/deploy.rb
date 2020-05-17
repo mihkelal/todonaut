@@ -10,4 +10,3 @@ set :puma_init_active_record, true
 # set :puma_preload_app, true # Not sure if necessary
 set :repo_url, 'git@github.com:mihkelal/todonaut.git'
 set :rvm_ruby_version, '2.6.2'
-set :rvm_custom_path, '/home/app/.rvm' # Custom RVM installation in DO server. See https://github.com/capistrano/rvm
