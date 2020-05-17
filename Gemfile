@@ -8,6 +8,7 @@ ruby '2.6.2'
 gem 'bcrypt'
 gem 'bootsnap', require: false
 gem 'draper'
+gem 'listen'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma'
 gem 'pundit'
@@ -29,7 +30,6 @@ group :development do
   gem 'capistrano-rails', require: false
   gem 'capistrano-rvm', require: false
   gem 'capistrano3-puma', require: false
-  gem 'listen'
   gem 'pry-rails'
   gem 'spring'
   gem 'spring-watcher-listen'
