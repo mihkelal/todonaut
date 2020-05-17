@@ -11,3 +11,15 @@ namespace :puma do
 
   before :start, :make_dirs
 end
+
+set :systemd_service_name, 'puma-todonaut'
+namespace :deploy do
+  desc 'Reload puma systemctl service'
+  task :reload do
+    on roles(:app) do
+      execute "sudo systemctl reload #{fetch(:systemd_service_name)}"
+    end
+  end
+
+  after :publishing, :reload
+end
