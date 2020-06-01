@@ -8,6 +8,7 @@ ruby '2.6.2'
 gem 'bcrypt'
 gem 'bootsnap', require: false
 gem 'draper'
+gem 'google-cloud-storage'
 gem 'listen'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma'
