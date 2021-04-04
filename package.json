@@ -8,8 +8,7 @@
     "caniuse-lite": "~1.0.30001022",
     "stimulus": "~1.1.1",
     "tailwindcss": "~1.1.4",
-    "turbolinks": "~5.2.0",
-    "webpack": "~4.41.5"
+    "turbolinks": "~5.2.0"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "~2.0.5",
