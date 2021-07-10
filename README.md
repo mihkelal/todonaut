@@ -5,7 +5,7 @@ Note manager with file uploading function.
 ## Prerequisites
 
 Before you begin, ensure you have installed the following on your machine:
-* `ruby` version `2.6.2`
+* `ruby` version `3.0.0`
 * `yarn`
 * `Postgresql`
 
