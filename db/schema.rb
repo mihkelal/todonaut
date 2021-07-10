@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_03_201326) do
+ActiveRecord::Schema.define(version: 2021_07_10_151556) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -59,5 +59,6 @@ ActiveRecord::Schema.define(version: 2019_10_03_201326) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "notes", "users", on_delete: :cascade
 end
