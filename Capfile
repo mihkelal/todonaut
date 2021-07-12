@@ -10,5 +10,6 @@ require 'capistrano/bundler'
 require 'capistrano/rvm'
 require 'capistrano/puma'
 install_plugin Capistrano::Puma, load_hooks: false
+install_plugin Capistrano::Puma::Systemd
 
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
