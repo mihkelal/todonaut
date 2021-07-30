@@ -13,7 +13,7 @@ gem 'listen'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma'
 gem 'pundit'
-gem 'rails', '~> 6.0.0'
+gem 'rails', '~> 6.1.0'
 gem 'slim-rails'
 gem 'turbolinks'
 gem 'turbolinks_render'
@@ -32,6 +32,6 @@ group :development do
   gem 'capistrano-rvm', require: false
   gem 'capistrano3-puma', require: false
   gem 'pry-rails'
+  gem 'rack-mini-profiler'
   gem 'spring'
-  gem 'spring-watcher-listen'
 end

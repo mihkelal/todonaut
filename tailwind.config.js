@@ -1,5 +1,10 @@
 module.exports = {
   separator: '_',
+  purge: [
+    './app/views/**/*.slim',
+    './app/webpacker/**/*.scss'
+  ],
+  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
