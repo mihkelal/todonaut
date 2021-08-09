@@ -15,8 +15,7 @@ gem 'puma'
 gem 'pundit'
 gem 'rails', '~> 6.1.0'
 gem 'slim-rails'
-gem 'turbolinks'
-gem 'turbolinks_render'
+gem 'turbo-rails'
 gem 'webpacker'
 
 group :development, :test do

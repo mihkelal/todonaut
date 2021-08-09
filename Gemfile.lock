@@ -309,14 +309,8 @@ GEM
     thor (1.1.0)
     tilt (2.0.10)
     trailblazer-option (0.1.1)
-    turbolinks (5.2.1)
-      turbolinks-source (~> 5.2)
-    turbolinks-source (5.2.0)
-    turbolinks_render (0.9.21)
-      actionpack (>= 5.2.0)
-      activesupport (>= 5.2.0)
-      railties (>= 5.2.0)
-      turbolinks-source (~> 5.1)
+    turbo-rails (0.6.0)
+      rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     uber (0.1.0)
@@ -361,8 +355,7 @@ DEPENDENCIES
   rubocop-rspec
   slim-rails
   spring
-  turbolinks
-  turbolinks_render
+  turbo-rails
   webpacker
 
 RUBY VERSION
