@@ -1,13 +1,18 @@
 # Defaults https://github.com/bbatsov/rubocop/blob/master/config/default.yml
+require:
+  - rubocop-rails
+  - rubocop-performance
+  - rubocop-rspec
 
 AllCops:
   Exclude:
     - db/schema.rb
     - node_modules/**/*
+  NewCops: enable
   TargetRubyVersion: 3.0
-  TargetRailsVersion: 6.0
+  TargetRailsVersion: 6.1
 
-Metrics/LineLength:
+Layour/LineLength:
   Max: 120
 
 Metrics/MethodLength:
