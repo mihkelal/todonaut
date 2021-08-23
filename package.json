@@ -4,7 +4,7 @@
   "dependencies": {
     "@hotwired/turbo-rails": "^7.0.0-rc.1",
     "@rails/activestorage": "~6.1.4",
-    "@rails/webpacker": "^5.4.0",
+    "@rails/webpacker": "^5.4.2",
     "autoprefixer": "^9",
     "postcss": "^7",
     "stimulus": "^2",
