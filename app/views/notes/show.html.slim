@@ -33,4 +33,4 @@
           => link_to('Back', notes_path, class: 'underline')
           - unless @note.completed?
             '|
-            = link_to('Mark as completed', complete_note_path(@note), class: 'underline', method: :patch)
+            = link_to('Mark as completed', complete_note_path(@note), class: 'underline', data: {'turbo-method': :patch} )

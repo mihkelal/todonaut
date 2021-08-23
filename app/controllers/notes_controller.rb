@@ -47,7 +47,7 @@ class NotesController < ApplicationController
     service = Notes::Complete.new(note: @note)
     if service.save
       flash[:notice] = 'Note successfully marked as completed.'
-      redirect_to notes_path
+      redirect_to notes_path, status: :see_other
     else
       flash[:alert] = "Note not marked as completed: #{service.errors.full_messages.join(', ')}"
       redirect_to @note
