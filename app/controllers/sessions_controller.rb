@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
 
     @login = Login.new(user_params)
     if @login.save
+      reset_session
       helpers.log_in(@login.user)
       redirect_to notes_path, notice: 'Successfully logged in.'
     else
@@ -23,6 +24,7 @@ class SessionsController < ApplicationController
     authorize(:session)
 
     helpers.log_out
+    reset_session
     redirect_to notes_path, notice: 'Successfully logged out.', status: :see_other
   end
 

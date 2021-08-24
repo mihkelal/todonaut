@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
     @register = Register.new(user_params)
     if @register.save
+      reset_session
       helpers.log_in(@register.user)
       redirect_to notes_path, notice: 'Successfully registered.'
     else
