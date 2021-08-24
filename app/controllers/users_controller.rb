@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       helpers.log_in(@register.user)
       redirect_to notes_path, notice: 'Successfully registered.'
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

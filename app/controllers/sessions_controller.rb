@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
       helpers.log_in(@login.user)
       redirect_to notes_path, notice: 'Successfully logged in.'
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
     authorize(:session)
 
     helpers.log_out
-    redirect_to notes_path, notice: 'Successfully logged out.'
+    redirect_to notes_path, notice: 'Successfully logged out.', status: :see_other
   end
 
   private
