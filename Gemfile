@@ -22,10 +22,12 @@ gem 'webpacker'
 
 group :development, :test do
   gem 'pry-byebug'
+  gem 'pry-rails'
   gem 'rubocop'
   gem 'rubocop-performance'
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -36,7 +38,6 @@ group :development do
   gem 'capistrano-bundler', require: false
   gem 'capistrano-rails', require: false
   gem 'capistrano3-puma', require: false
-  gem 'pry-rails'
   gem 'rack-mini-profiler'
   gem 'spring'
 end
