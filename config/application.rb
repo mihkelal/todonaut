@@ -39,6 +39,10 @@ module Todonaut
       g.javascripts false
       g.orm :active_record, primary_key_type: :uuid
       g.stylesheets false
+      g.test_framework :rspec,
+                       view_specs: false,
+                       routing_specs: false,
+                       request_specs: false
     end
   end
 end
