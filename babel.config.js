@@ -54,7 +54,13 @@ module.exports = function(api) {
         }
       ],
       [
-        '@babel/plugin-proposal-private-methods', // https://github.com/rails/webpacker/issues/3008#issuecomment-856941146
+        '@babel/plugin-proposal-private-methods',
+        {
+          loose: true
+        }
+      ],
+      [
+        '@babel/plugin-proposal-private-property-in-object',
         {
           loose: true
         }
