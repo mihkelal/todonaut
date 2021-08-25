@@ -42,3 +42,7 @@ group :development do
   gem 'rack-mini-profiler'
   gem 'spring'
 end
+
+group :test do
+  gem 'fuubar', require: false
+end
