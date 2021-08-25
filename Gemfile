@@ -21,6 +21,7 @@ gem 'turbo-rails'
 gem 'webpacker'
 
 group :development, :test do
+  gem 'factory_bot_rails'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'rspec-rails'
