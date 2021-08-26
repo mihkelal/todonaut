@@ -21,11 +21,14 @@ gem 'turbo-rails'
 gem 'webpacker'
 
 group :development, :test do
+  gem 'factory_bot_rails'
   gem 'pry-byebug'
-  gem 'rubocop'
-  gem 'rubocop-performance'
-  gem 'rubocop-rails'
-  gem 'rubocop-rspec'
+  gem 'pry-rails'
+  gem 'rspec-rails'
+  gem 'rubocop', require: false
+  gem 'rubocop-performance', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
 end
 
 group :development do
@@ -36,7 +39,10 @@ group :development do
   gem 'capistrano-bundler', require: false
   gem 'capistrano-rails', require: false
   gem 'capistrano3-puma', require: false
-  gem 'pry-rails'
   gem 'rack-mini-profiler'
   gem 'spring'
+end
+
+group :test do
+  gem 'fuubar', require: false
 end
