@@ -3,7 +3,9 @@
 require 'rails_helper'
 
 RSpec.describe 'User registers' do
-  before { driven_by(:rack_test) }
+  before do
+    driven_by(:rack_test)
+  end
 
   it 'with all required fields filled' do
     visit register_path
