@@ -27,6 +27,16 @@ Rails/SkipsModelValidations:
   Exclude:
     - db/migrate/*
 
+RSpec/DescribeClass:
+  Exclude:
+    - spec/system/*
+
+RSpec/ExampleLength:
+  Max: 20
+
+RSpec/MultipleExpectations:
+  Max: 5
+
 Style/MixinUsage:
   Exclude:
     - bin/**
