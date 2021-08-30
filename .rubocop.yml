@@ -15,6 +15,10 @@ AllCops:
 Layour/LineLength:
   Max: 120
 
+Metrics/BlockLength:
+  Exclude:
+    - spec/system/*
+
 Metrics/MethodLength:
   Exclude:
     - db/migrate/*.rb
