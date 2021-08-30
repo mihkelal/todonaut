@@ -21,7 +21,7 @@ RSpec.describe 'Registered user updates note' do
 
     visit edit_note_path(note)
     fill_in 'Description', with: 'New description'
-    click_on 'Update Note'
+    click_button 'Update Note'
 
     expect(page).to have_text 'Note successfully updated.'
     expect(page).to have_text 'New description'
