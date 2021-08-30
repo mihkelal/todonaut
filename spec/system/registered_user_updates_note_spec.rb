@@ -12,7 +12,7 @@ RSpec.describe 'Registered user updates note' do
     driven_by(:rack_test)
   end
 
-  it 'when note blongs to user' do
+  it 'when note belongs to user' do
     visit login_path
     fill_in 'Username', with: user.username
     fill_in 'Password', with: user.password
@@ -23,7 +23,7 @@ RSpec.describe 'Registered user updates note' do
     fill_in 'Description', with: 'New description'
     click_button 'Update Note'
 
-    expect(page).to have_text 'Note successfully updated.'
+    expect(page).to have_text 'Note successfully updated'
     expect(page).to have_text 'New description'
   end
 

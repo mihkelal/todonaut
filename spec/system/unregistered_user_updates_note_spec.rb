@@ -16,7 +16,7 @@ RSpec.describe 'Unregistered user updates note' do
     fill_in 'Description', with: 'New description'
     click_button 'Update Note'
 
-    expect(page).to have_text 'Note successfully updated.'
+    expect(page).to have_text 'Note successfully updated'
     expect(page).to have_text 'New description'
   end
 

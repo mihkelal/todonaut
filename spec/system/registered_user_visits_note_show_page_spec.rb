@@ -11,7 +11,7 @@ RSpec.describe 'Registered user visits note show page' do
     driven_by(:rack_test)
   end
 
-  it 'when note blongs to user' do
+  it 'when note belongs to user' do
     visit login_path
     fill_in 'Username', with: user.username
     fill_in 'Password', with: user.password

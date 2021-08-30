@@ -25,7 +25,7 @@ RSpec.describe 'Registered user creates note' do
     attach_file 'Files', 'spec/fixtures/text_file.txt'
     click_button 'Create Note'
 
-    expect(page).to have_text 'Note successfully created.'
+    expect(page).to have_text 'Note successfully created'
     expect(page).to have_text note[:title]
   end
 end
