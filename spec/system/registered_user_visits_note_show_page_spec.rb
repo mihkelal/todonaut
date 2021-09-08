@@ -7,10 +7,6 @@ RSpec.describe 'Registered user visits note show page' do
   let(:users_note) { create(:note, :with_some_attributes, user: user) }
   let(:other_note) { create(:note, :with_some_attributes, user: create(:user)) }
 
-  before do
-    driven_by(:rack_test)
-  end
-
   it 'when note belongs to user' do
     visit login_path
     fill_in 'Username', with: user.username

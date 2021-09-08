@@ -7,10 +7,6 @@ RSpec.describe 'Unregistered user visits note show page' do
   let(:public_note) { create(:note, :with_some_attributes) }
   let(:private_note) { create(:note, :with_some_attributes, user: user) }
 
-  before do
-    driven_by(:rack_test)
-  end
-
   it 'when note is public' do
     visit note_path(public_note)
     expect(page).to have_text public_note.title

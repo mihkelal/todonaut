@@ -5,11 +5,7 @@ require 'rails_helper'
 RSpec.describe 'User logs in and out' do
   let(:user) { create(:user) }
 
-  before do
-    driven_by(:selenium_chrome_headless)
-  end
-
-  it 'with all required fields filled' do
+  it 'with all required fields filled', :js do
     visit login_path
     fill_in 'Username', with: user.username
     fill_in 'Password', with: user.password

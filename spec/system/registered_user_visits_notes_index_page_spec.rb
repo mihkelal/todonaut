@@ -7,10 +7,6 @@ RSpec.describe 'Registered user visits notes index page' do
   let!(:users_note) { create(:note, :with_some_attributes, user: user) }
   let!(:public_note) { create(:note, :with_some_attributes) }
 
-  before do
-    driven_by(:rack_test)
-  end
-
   it 'seeing only his own notes' do
     visit login_path
     fill_in 'Username', with: user.username

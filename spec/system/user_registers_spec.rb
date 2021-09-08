@@ -3,10 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe 'User registers' do
-  before do
-    driven_by(:rack_test)
-  end
-
   it 'with all required fields filled' do
     visit register_path
     fill_in 'Username', with: Faker::Internet.username

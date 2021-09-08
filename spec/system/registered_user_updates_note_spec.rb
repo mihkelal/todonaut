@@ -8,10 +8,6 @@ RSpec.describe 'Registered user updates note' do
   let(:other_note) { create(:note, :with_some_attributes, user: create(:user), completed_at: nil) }
   let(:completed_note) { create(:note, :with_some_attributes, user: user, completed_at: Time.current) }
 
-  before do
-    driven_by(:rack_test)
-  end
-
   it 'when note belongs to user' do
     visit login_path
     fill_in 'Username', with: user.username

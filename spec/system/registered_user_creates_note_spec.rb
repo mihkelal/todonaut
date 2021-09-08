@@ -6,10 +6,6 @@ RSpec.describe 'Registered user creates note' do
   let(:user) { create(:user) }
   let(:note) { attributes_for(:note, :with_some_attributes) }
 
-  before do
-    driven_by(:rack_test)
-  end
-
   it 'with all fields filled' do
     visit login_path
     fill_in 'Username', with: user.username

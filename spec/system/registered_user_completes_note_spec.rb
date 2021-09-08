@@ -6,11 +6,7 @@ RSpec.describe 'Registered user completes note' do
   let(:user) { create(:user) }
   let(:note) { create(:note, :with_some_attributes, user: user, completed_at: nil) }
 
-  before do
-    driven_by(:selenium_chrome_headless)
-  end
-
-  it 'when note belongs to user' do
+  it 'when note belongs to user', :js do
     visit login_path
     fill_in 'Username', with: user.username
     fill_in 'Password', with: user.password
