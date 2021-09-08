@@ -6,16 +6,10 @@ RSpec.describe 'User logs in and out' do
   let(:user) { create(:user) }
 
   it 'with all required fields filled', :js do
-    visit login_path
-    fill_in 'Username', with: user.username
-    fill_in 'Password', with: user.password
-    click_button 'Log in'
+    login_as(user)
 
-    expect(page).to have_text 'Successfully logged in'
     expect(page).to have_text 'Log out'
-
     click_link 'Log out'
-
     expect(page).to have_text 'Successfully logged out'
   end
 
