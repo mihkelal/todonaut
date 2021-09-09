@@ -15,6 +15,10 @@ AllCops:
 Layour/LineLength:
   Max: 120
 
+Metrics/BlockLength:
+  Exclude:
+    - spec/system/*
+
 Metrics/MethodLength:
   Exclude:
     - db/migrate/*.rb
@@ -26,6 +30,16 @@ Rails:
 Rails/SkipsModelValidations:
   Exclude:
     - db/migrate/*
+
+RSpec/DescribeClass:
+  Exclude:
+    - spec/system/*
+
+RSpec/ExampleLength:
+  Max: 20
+
+RSpec/MultipleExpectations:
+  Max: 5
 
 Style/MixinUsage:
   Exclude:

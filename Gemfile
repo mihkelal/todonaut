@@ -21,6 +21,7 @@ gem 'turbo-rails'
 gem 'webpacker'
 
 group :development, :test do
+  gem 'capybara'
   gem 'factory_bot_rails'
   gem 'pry-byebug'
   gem 'pry-rails'
@@ -29,6 +30,7 @@ group :development, :test do
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
+  gem 'webdrivers'
 end
 
 group :development do
@@ -44,5 +46,6 @@ group :development do
 end
 
 group :test do
+  gem 'faker'
   gem 'fuubar', require: false
 end
