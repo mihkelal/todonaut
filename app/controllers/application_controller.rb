@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
   private
 
   def redirect_user_back
-    redirect_back(fallback_location: root_path, alert: t('not_authorized'))
+    redirect_back(fallback_location: root_path, alert: t('global.not_authorized'))
   end
 end

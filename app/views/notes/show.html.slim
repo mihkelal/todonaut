@@ -30,7 +30,7 @@
         .pt-4
           => link_to(t('.edit'), edit_note_path(@note), class: 'underline')
           '|
-          => link_to(t('.back'), notes_path, class: 'underline')
+          => link_to(t('global.back'), notes_path, class: 'underline')
           - unless @note.completed?
             '|
             = link_to(t('.mark_as_completed'), complete_note_path(@note), class: 'underline', data: {'turbo-method': :patch} )
