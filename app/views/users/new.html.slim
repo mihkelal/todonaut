@@ -2,13 +2,13 @@
   .p-4.sm_pt-20
     .p-2.rounded.bg-gray-100
       .px-2.border-b.border-brand-black.text-3xl
-        h1.font-bold Register
+        h1.font-bold = t('.register')
       .mt-4
         .sm_mx-4.overflow-auto
           = form_with(model: @register, scope: :user, url: register_path(@register)) do |f|
             - if @register.errors.any?
               #error_explanation
-                h2 = "#{pluralize(@register.errors.count, 'error')} prohibited registration:"
+                h2 = t('errors.template.body')
                 ul
                   - @register.errors.full_messages.each do |message|
                     li = message
@@ -22,7 +22,7 @@
             .field.mt-2
               => f.label(:password_confirmation, class: 'block font-bold')
               = f.password_field(:password_confirmation, class: 'block w-full p-1 border border-brand-black rounded')
-            .actions.mt-4 = f.submit('Register', class: 'p-2 rounded bg-brand-grain cursor-pointer')
+            .actions.mt-4 = f.submit(t('.register'), class: 'p-2 rounded bg-brand-grain cursor-pointer')
 
         .pt-4
-          => link_to('Back', root_path, class: 'underline')
+          => link_to(t('global.back'), root_path, class: 'underline')
