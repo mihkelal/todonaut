@@ -1,6 +1,6 @@
 .p-4.md_p-10.lg_p-20
   .p-2.rounded.bg-gray-100
     .px-2.border-b.border-brand-black.text-3xl
-      h1.font-bold Listing notes
+      h1.font-bold = t('.listing_notes')
     ul.mt-4.md_mx-4.pl-6.overflow-auto.list-outside.list-disc = render @notes
-    .m-4 = link_to('Add new note', new_note_path, class: 'p-2 rounded bg-brand-grain cursor-pointer')
+    .m-4 = link_to(t('.add_new_note'), new_note_path, class: 'p-2 rounded bg-brand-grain cursor-pointer')

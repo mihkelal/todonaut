@@ -18,7 +18,7 @@ class NotesController < ApplicationController
     @note = Note.new(note_params)
 
     if @note.save
-      redirect_to @note, notice: 'Note successfully created.'
+      redirect_to @note, notice: t('.success')
     else
       render :new, status: :unprocessable_entity
     end
@@ -34,7 +34,7 @@ class NotesController < ApplicationController
     authorize(@note)
 
     if @note.update(note_params)
-      redirect_to @note, notice: 'Note successfully updated.'
+      redirect_to @note, notice: t('.success')
     else
       render :edit, status: :unprocessable_entity
     end
@@ -46,11 +46,11 @@ class NotesController < ApplicationController
 
     service = Notes::Complete.new(note: @note)
     if service.save
-      flash[:notice] = 'Note successfully marked as completed.'
+      flash[:notice] = t('.success')
       redirect_to notes_path, status: :see_other
     else
-      flash[:alert] = "Note not marked as completed: #{service.errors.full_messages.join(', ')}"
-      redirect_to @note
+      flash[:alert] = t('.error', errors: service.errors.full_messages.join(', '))
+      redirect_to @note, status: :see_other
     end
   end
 

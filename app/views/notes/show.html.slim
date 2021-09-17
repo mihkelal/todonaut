@@ -8,29 +8,29 @@
           table.w-full
             tbody
               tr
-                th.border.border-brand-black.p-2.text-left Title
+                th.border.border-brand-black.p-2.text-left = @note.class.human_attribute_name('title')
                 td.border.border-brand-black.p-2 = @note.title
               tr
-                th.border.border-brand-black.p-2.text-left Description
+                th.border.border-brand-black.p-2.text-left = @note.class.human_attribute_name('description')
                 td.border.border-brand-black.p-2 = simple_format(h(@note.description))
               tr
-                th.border.border-brand-black.p-2.text-left Started at
+                th.border.border-brand-black.p-2.text-left = @note.class.human_attribute_name('started_at')
                 td.border.border-brand-black.p-2 = @note.started_at
               tr
-                th.border.border-brand-black.p-2.text-left Ended at
+                th.border.border-brand-black.p-2.text-left = @note.class.human_attribute_name('ended_at')
                 td.border.border-brand-black.p-2 = @note.ended_at
               tr
-                th.border.border-brand-black.p-2.text-left Completed at
+                th.border.border-brand-black.p-2.text-left = @note.class.human_attribute_name('completed_at')
                 td.border.border-brand-black.p-2 = @note.completed_at
               tr
-                th.border.border-brand-black.p-2.text-left Files
+                th.border.border-brand-black.p-2.text-left = @note.class.human_attribute_name('files')
                 td.border.border-brand-black.p-2
                   - @note.files.each do |file|
                     = link_to(file.filename, rails_blob_path(file), class: 'underline')
         .pt-4
-          => link_to('Edit', edit_note_path(@note), class: 'underline')
+          => link_to(t('.edit'), edit_note_path(@note), class: 'underline')
           '|
-          => link_to('Back', notes_path, class: 'underline')
+          => link_to(t('.back'), notes_path, class: 'underline')
           - unless @note.completed?
             '|
-            = link_to('Mark as completed', complete_note_path(@note), class: 'underline', data: {'turbo-method': :patch} )
+            = link_to(t('.mark_as_completed'), complete_note_path(@note), class: 'underline', data: {'turbo-method': :patch} )

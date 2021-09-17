@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     if @register.save
       reset_session
       helpers.log_in(@register.user)
-      redirect_to notes_path, notice: 'Successfully registered.'
+      redirect_to notes_path, notice: t('.success')
     else
       render :new, status: :unprocessable_entity
     end

@@ -1,9 +1,9 @@
 .p-4.md_p-10.lg_p-20
   .p-2.rounded.bg-gray-100
     .px-2.border-b.border-brand-black.text-3xl
-      h1.font-bold New note
+      h1.font-bold = t('.new_note')
     .mt-4
       .md_mx-8.overflow-auto
         = render 'form', note: @note
     .pt-4
-      = link_to('Back', notes_path, class: 'underline')
+      = link_to(t('.back'), notes_path, class: 'underline')
