@@ -9,6 +9,14 @@ module SessionsHelper
     @current_user ||= User.find_by(id: session[:user_id])
   end
 
+  def current_user_locale
+    current_user&.locale || session[:locale] || I18n.default_locale
+  end
+
+  def other_locales
+    I18n.available_locales.without(current_user_locale.to_sym)
+  end
+
   def logged_in?
     current_user.present?
   end
