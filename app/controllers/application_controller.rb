@@ -7,9 +7,16 @@ class ApplicationController < ActionController::Base
 
   rescue_from Pundit::NotAuthorizedError, with: :redirect_user_back
 
+  around_action :switch_locale
+
   private
 
   def redirect_user_back
     redirect_back(fallback_location: root_path, alert: t('global.not_authorized'))
+  end
+
+  def switch_locale(&action)
+    locale = current_user&.locale || session[:locale] || I18n.default_locale
+    I18n.with_locale(locale, &action)
   end
 end
