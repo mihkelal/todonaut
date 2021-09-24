@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resource :login, only: %i[create], controller: :sessions do
     get :new
   end
+  resource :locale, only: %i[update]
   resource :logout, only: %i[destroy], controller: :sessions
 
   resources :notes, except: %i[destroy] do
