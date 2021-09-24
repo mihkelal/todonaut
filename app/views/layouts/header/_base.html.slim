@@ -1,6 +1,12 @@
 header.bg-gray-100.p-4.flex.items-center.justify-between
   = link_to('Todonaut', root_path, class: 'text-xl font-semibold')
   .
+    ul.inline.group.mr-2.sm_mr-4
+      li.inline = current_user_locale
+      .absolute.top-12.md_top-10.transform.-translate-x-4.hidden.bg-gray-100.border.border-brand-black.group-hover_block
+        - other_locales.each do |locale|
+          = button_to(locale_path, method: :patch, params: {locale: locale}, class: 'w-full') do
+            li.px-4.py-2.hover_bg-gray-200 = locale
     - if logged_in?
       = render 'layouts/header/logged_in'
     - else
