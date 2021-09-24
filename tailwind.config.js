@@ -17,6 +17,11 @@ module.exports = {
       }
     }
   },
-  variants: {},
+  variants: {
+    extend: {
+      backgroundColor: ['active'],
+      display: ['group-hover'],
+    }
+  },
   plugins: []
 }
