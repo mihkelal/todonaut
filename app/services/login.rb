@@ -24,6 +24,6 @@ class Login < ApplicationService
   end
 
   def add_errors
-    errors.add(:base, 'Incorrect username or password')
+    errors.add(:base, I18n.t('global.incorrect_username_password'))
   end
 end

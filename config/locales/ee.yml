@@ -227,6 +227,7 @@ ee:
       note: Märge
   global:
     back: Tagasi
+    incorrect_username_password: Vale kasutajanimi või salasõna
     not_authorized: Sul puuduvad selle tegemiseks õigused.
   layouts:
     header:
