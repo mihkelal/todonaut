@@ -18,7 +18,6 @@ gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'slim-rails'
 gem 'turbo-rails'
-gem 'webpacker'
 
 group :development, :test do
   gem 'capybara'

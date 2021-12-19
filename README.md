@@ -24,10 +24,6 @@ Start the puma server:
 ```shell
 rails s
 ```
-Optionally, also start the webpack-dev server in another tab:
-```shell
-bin/webpack-dev-server
-```
 
 ## Contact
 
