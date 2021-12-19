@@ -9,6 +9,7 @@ gem 'bcrypt'
 gem 'bootsnap', require: false
 gem 'draper'
 gem 'google-cloud-storage'
+gem 'importmap-rails'
 gem 'listen'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma'
@@ -17,6 +18,7 @@ gem 'rails', '~> 7.0.0'
 gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'slim-rails'
+gem 'sprockets-rails'
 gem 'turbo-rails'
 
 group :development, :test do
