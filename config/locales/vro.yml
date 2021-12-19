@@ -1,0 +1,267 @@
+vro:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "Validiirminõ tsurku: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "Saa-ai kistuta: %{record} om olõmah"
+          has_many: "Saa-ai kistuta: %{record} omma olõmah"
+  date:
+    abbr_day_names:
+    - Pü
+    - I
+    - T
+    - K
+    - N
+    - R
+    - Pu
+    abbr_month_names:
+    -
+    - jaan.
+    - vebr.
+    - märts
+    - apr.
+    - mai
+    - juuni
+    - juuli
+    - aug.
+    - sept.
+    - okt.
+    - novv.
+    - dets.
+    day_names:
+    - pühäpäiv
+    - iispäiv
+    - tõõsõpäiv
+    - kolmapäiv
+    - neläpäiv
+    - riide
+    - puulpühä
+    formats:
+      default: "%d.%m.%Y"
+      long: "%d. %B %Y"
+      short: "%d.%m.%y"
+    month_names:
+    -
+    - vahtsõaastagakuu (jaanuar)
+    - radokuu (vebruar)
+    - urbõkuu (märts)
+    - mahlakuu (april)
+    - lehekuu (mai)
+    - piimäkuu (juuni)
+    - hainakuu (juuli)
+    - põimukuu (august)
+    - süküskuu (septembri)
+    - rehekuu (oktobri)
+    - märdikuu (novvembri)
+    - joulukuu (detsembri)
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: määne %{count} tunn
+        other: määne %{count} tunni
+      about_x_months:
+        one: määne %{count} kuu
+        other: määne %{count} kuud
+      about_x_years:
+        one: määne %{count} aastak
+        other: määne %{count} aastakku
+      almost_x_years:
+        one: pia üks aastak
+        other: pia %{count} aastakku
+      half_a_minute: puul minotit
+      less_than_x_seconds:
+        one: veideb ku %{count} tsekond
+        other: veideb ku %{count} tsekondit
+      less_than_x_minutes:
+        one: veideb ku %{count} minot
+        other: veideb ku %{count} minotit
+      over_x_years:
+        one: päält %{count} aastagu
+        other: päält %{count} aastakku
+      x_seconds:
+        one: "%{count} sekund"
+        other: "%{count} sekundit"
+      x_minutes:
+        one: "%{count} minot"
+        other: "%{count} minotit"
+      x_days:
+        one: "%{count} päiv"
+        other: "%{count} päivä"
+      x_months:
+        one: "%{count} kuu"
+        other: "%{count} kuud"
+      x_years:
+        one: "%{count} aastak"
+        other: "%{count} aastakku"
+    prompts:
+      second: Tsekondit
+      minute: Minotit
+      hour: Tunni
+      day: Päiv
+      month: Kuu
+      year: Aastak
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: pidä olõma hüäst kiidet
+      blank: om täütmäldä
+      confirmation: ei vasta kimmätüsele
+      empty: om tühi
+      equal_to: pidä olõma %{count}
+      even: pidä olõma paariga arv
+      exclusion: om kinni pantu
+      greater_than: pidä olõma päält %{count}
+      greater_than_or_equal_to: pidä olõma päält vai võrdnõ %{count}
+      inclusion: olõ-õi nimekiräh
+      invalid: om vigalinõ
+      less_than: pidä olõma veideb ku %{count}
+      less_than_or_equal_to: pidä olõma veideb ku vai võrdnõ %{count}
+      model_invalid: "Validiirminõ tsurku: %{errors}"
+      not_a_number: olõ-õi nummõr
+      not_an_integer: pidä olõma täüsnummõr
+      odd: pidä olõma paarilda arv
+      other_than: tohi-i olla %{count}
+      present: pidä olõma täutmäldä
+      required: pidä olõmah olõma
+      taken: om jo võetu
+      too_long: om liisnalt pikk (kõgõ inäb %{count} kirätähte)
+      too_short: om liisnalt lühkene (kõgõ veidebä %{count} kirätähte)
+      wrong_length: om võlsi pittüsega (pidä olõma %{count} kirätähte)
+    template:
+      body: 'Viku oll väljuh:'
+      header:
+        one: "%{model} om üte viäga. Es saa är pästi"
+        other: "%{model} om %{count} viäga. Es saa är pästi"
+  helpers:
+    select:
+      prompt: Pallõ vali
+    submit:
+      create: Luu vahtsõnõ %{model}
+      submit: Pästä %{model}
+      update: Luu %{model} ümbre
+  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "€"
+    format:
+      delimiter: " "
+      precision: 2
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: millard
+          million: millon
+          quadrillion: kvadrillon
+          thousand: tuhat
+          trillion: trillon
+          unit: ""
+      format:
+        delimiter: ""
+        precision: 1
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: bait
+            other: baiti
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ""
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ""
+  support:
+    array:
+      last_word_connector: " ja "
+      two_words_connector: " ja "
+      words_connector: ", "
+  time:
+    am: inne lõõnaht
+    formats:
+      default: "%d. %B %Y, %H:%M"
+      long: "%a, %d. %b %Y, %H:%M:%S %z"
+      short: "%d.%m.%y, %H:%M"
+    pm: pääle lõõnaht
+
+  activemodel:
+    attributes:
+      login:
+        password: Salasõna
+        username: Pruukjanimi
+      register:
+        password: Salasõna
+        password_confirmation: Salasõna kimmätüs
+        username: Pruukjanimi
+  activerecord:
+    attributes:
+      note:
+        completed_at: Täüde viidü
+        description: Seletüs
+        ended_at: Lõpp
+        files: Faili
+        started_at: Alostuss
+        title: Päälkiri
+    models:
+      note: Märgüs
+  global:
+    back: Tagasi
+    incorrect_username_password: Võlss pruukjanimi vai salasõna
+    not_authorized: Sul olõ-õi sjoost õiguisi.
+  layouts:
+    header:
+      logged_in:
+        log_out: Logi vällä
+        welcome: Olõ terve tulõma, %{username}!
+      not_logged_in:
+        log_in: Logi sisse
+        register: Luu konto
+  notes:
+    complete:
+      error: 'Es märgi märgüst tettüst: %{errors}'
+      success: Märgüs tettüst märgit.
+    create:
+      success: Märgüs luud.
+    index:
+      add_new_note: Panõ vahtsõnõ märgüs mano
+      listing_notes: Märgüisi nimistü
+    new:
+      new_note: Vahtsõnõ märgüs
+    show:
+      edit: Luu ümbre
+      mark_as_completed: Märgi tettüst
+    update:
+      success: Märgüs ümbreluudu.
+  sessions:
+    create:
+      success: Olõt seeh!
+    destroy:
+      success: Olõt väläh!
+    new:
+      log_in: Logi sisse
+  users:
+    create:
+      success: Konto luuminõ õnnahtu.
+    new:
+      register: Luu konto

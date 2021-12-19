@@ -236,10 +236,10 @@ ee:
         welcome: Tere tulemast, %{username}!
       not_logged_in:
         log_in: Logi sisse
-        register: Registreeru
+        register: Loo konto
   notes:
     complete:
-      error: 'Note not marked as completed: %{errors}'
+      error: 'Märke täideviimisel ilmnesid vead: %{errors}'
       success: Märge täide viidud.
     create:
       success: Märge loodud.
@@ -262,6 +262,6 @@ ee:
       log_in: Logi sisse
   users:
     create:
-      success: Registreerumine õnnestus.
+      success: Konto loomine õnnestus.
     new:
-      register: Registreeru
+      register: Loo konto
