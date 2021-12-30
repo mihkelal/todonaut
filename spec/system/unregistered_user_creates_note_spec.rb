@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe 'Unregistered user creates note' do
   let(:note) { attributes_for(:note, :with_some_attributes) }
 
-  it 'with all fields filled' do
+  it 'with all fields filled', :js do
     visit new_note_path
     fill_in 'Title', with: note[:title]
     fill_in 'Description', with: note[:description]

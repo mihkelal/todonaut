@@ -10,7 +10,7 @@ RSpec.describe 'Registered user updates note' do
 
   before { login_as(user) }
 
-  it 'when note belongs to user' do
+  it 'when note belongs to user', :js do
     visit edit_note_path(note)
     fill_in 'Description', with: 'New description'
     click_button 'Update Note'
