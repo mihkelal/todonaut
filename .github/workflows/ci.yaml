@@ -32,6 +32,9 @@ jobs:
         with:
           bundler-cache: true
 
+      - name: Precompile assets
+        run: bin/rails assets:precompile
+
       - name: Setup test database
         run: bin/rails db:prepare
 
