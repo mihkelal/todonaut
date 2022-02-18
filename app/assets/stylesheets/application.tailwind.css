@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.alert {
+  @apply bg-red-400;
+}
+
+.notice {
+  @apply bg-blue-200;
+}

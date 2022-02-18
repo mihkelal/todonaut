@@ -9,16 +9,17 @@ gem 'bcrypt'
 gem 'bootsnap', require: false
 gem 'draper'
 gem 'google-cloud-storage'
-gem 'listen'
-gem 'pg', '>= 0.18', '< 2.0'
+gem 'importmap-rails'
+gem 'pg', '~> 1.1'
 gem 'puma'
 gem 'pundit'
-gem 'rails', '~> 6.1.0'
+gem 'rails', '~> 7.0.0'
 gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'slim-rails'
+gem 'sprockets-rails'
+gem 'tailwindcss-rails'
 gem 'turbo-rails'
-gem 'webpacker'
 
 group :development, :test do
   gem 'capybara'
@@ -42,7 +43,6 @@ group :development do
   gem 'capistrano-rails', require: false
   gem 'capistrano3-puma', require: false
   gem 'rack-mini-profiler'
-  gem 'spring'
 end
 
 group :test do

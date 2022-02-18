@@ -7,7 +7,7 @@ RSpec.describe 'Unregistered user updates note' do
   let(:private_note) { create(:note, :with_some_attributes, user: create(:user), completed_at: nil) }
   let(:completed_note) { create(:note, :with_some_attributes, completed_at: Time.current) }
 
-  it 'when note is public' do
+  it 'when note is public', :js do
     visit edit_note_path(public_note)
     fill_in 'Description', with: 'New description'
     click_button 'Update Note'

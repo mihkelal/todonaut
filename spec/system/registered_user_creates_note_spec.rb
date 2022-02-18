@@ -8,7 +8,7 @@ RSpec.describe 'Registered user creates note' do
 
   before { login_as(user) }
 
-  it 'with all fields filled' do
+  it 'with all fields filled', :js do
     visit new_note_path
     fill_in 'Title', with: note[:title]
     fill_in 'Description', with: note[:description]
