@@ -7,10 +7,9 @@ require:
 AllCops:
   Exclude:
     - db/schema.rb
-    - node_modules/**/*
   NewCops: enable
   TargetRubyVersion: 3.0
-  TargetRailsVersion: 6.1
+  TargetRailsVersion: 7.0
 
 Layour/LineLength:
   Max: 120
