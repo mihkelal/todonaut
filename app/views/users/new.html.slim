@@ -5,7 +5,7 @@
         h1.font-bold = t('.register')
       .mt-4
         .sm_mx-4.overflow-auto
-          = form_with(model: @register, scope: :user, url: register_path(@register)) do |f|
+          = form_with(model: @register, scope: :user, url: register_path(@register), data: { turbo: false }) do |f|
             - if @register.errors.any?
               #error_explanation
                 h2 = t('errors.template.body')
