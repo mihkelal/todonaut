@@ -17,7 +17,7 @@ class NotesController < ApplicationController
   def create
     @note = Note.new(note_params)
 
-    if @note.save
+    if validate_recaptcha && @note.save
       redirect_to @note, notice: t('.success')
     else
       render :new, status: :unprocessable_entity
@@ -33,7 +33,7 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
     authorize(@note)
 
-    if @note.update(note_params)
+    if validate_recaptcha && @note.update(note_params)
       redirect_to @note, notice: t('.success')
     else
       render :edit, status: :unprocessable_entity
@@ -55,6 +55,12 @@ class NotesController < ApplicationController
   end
 
   private
+
+  def validate_recaptcha
+    return true if helpers.logged_in?
+
+    verify_recaptcha(model: @note)
+  end
 
   def note_params
     params.require(:note).permit(:title, :description, :started_at, :ended_at, files: []).merge(user: current_user)
