@@ -253,6 +253,10 @@ vro:
       mark_as_completed: Märgi tettüst
     update:
       success: Märgüs ümbreluudu.
+  recaptcha:
+    errors:
+      verification_failed: 'Võlss reCAPTCHA. Olõ hüa, proomi vahtsõhe.'
+      recaptcha_unreachable: 'reCAPTCHA serveri hädä. Olõ hüa, proomi vahtsõhe.'
   sessions:
     create:
       success: Olõt seeh!
