@@ -253,6 +253,10 @@ ee:
       mark_as_completed: Märgi täideviiduks
     update:
       success: Märge muudetud.
+  recaptcha:
+    errors:
+      verification_failed: 'Vale reCAPTCHA, palun proovi uuesti.'
+      recaptcha_unreachable: 'reCAPTCHA serveri viga, palun proovi uuesti.'
   sessions:
     create:
       success: Sisselogimine õnnestus.
