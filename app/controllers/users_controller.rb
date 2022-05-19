@@ -11,7 +11,8 @@ class UsersController < ApplicationController
     authorize(:register)
 
     @register = Register.new(user_params)
-    if @register.save
+
+    if verify_recaptcha(model: @register) && @register.save
       reset_session
       helpers.log_in(@register.user)
       redirect_to notes_path, notice: t('.success')
