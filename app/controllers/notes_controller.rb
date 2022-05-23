@@ -44,6 +44,7 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
     authorize(@note)
 
+
     service = Notes::Complete.new(note: @note)
     if service.save
       flash[:notice] = t('.success')
