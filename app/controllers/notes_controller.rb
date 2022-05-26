@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  def index
+  def index def
     @notes = policy_scope(Note.with_attached_files).decorate
   end
 
