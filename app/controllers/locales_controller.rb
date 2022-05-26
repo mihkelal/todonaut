@@ -13,6 +13,6 @@ class LocalesController < ApplicationController
   private
 
   def locale_param
-    params.require(:locale)
+    params.require(:locale
   end
 end

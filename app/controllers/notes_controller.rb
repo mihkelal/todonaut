@@ -42,13 +42,13 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
     authorize(@note)
 
-
     service = Notes::Complete.new(note: @note)
     if service.save
       flash[:notice] = t('.success')
       redirect_to notes_path, status: :see_other
     else
       flash[:alert] = t('.error', errors: service.errors.full_messages.join(', '))
+      2
       redirect_to @note, status: :see_other
     end
   end
