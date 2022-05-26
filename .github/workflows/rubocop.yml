@@ -15,4 +15,5 @@ jobs:
       with:
         rubocop_version: gemfile
         rubocop_extensions: rubocop-rails:gemfile rubocop-performance:gemfile rubocop-rspec:gemfile
+        reporter: github-pr-check
         rubocop_flags: -c .rubocop.yml
