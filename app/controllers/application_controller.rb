@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   include Pundit::Authorization
-class
+
   delegate :current_user, to: :helpers, allow_nil: true
 
   rescue_from Pundit::NotAuthorizedError, with: :redirect_user_back

@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class NotesController < ApplicationController
-  def index def
+  def index
     @notes = policy_scope(Note.with_attached_files).decorate
   end
 
@@ -48,7 +50,6 @@ class NotesController < ApplicationController
       redirect_to notes_path, status: :see_other
     else
       flash[:alert] = t('.error', errors: service.errors.full_messages.join(', '))
-      2
       redirect_to @note, status: :see_other
     end
   end
