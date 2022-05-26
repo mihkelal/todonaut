@@ -8,10 +8,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Set up Ruby 3.0
+      uses: ruby/setup-ruby@v1
+      with:
+        bundler-cache: true
     - name: Rubocop
       uses: reviewdog/action-rubocop@v2
       with:
         rubocop_version: gemfile
         rubocop_extensions: rubocop-rails:gemfile rubocop-performance:gemfile rubocop-rspec:gemfile
         reporter: github-pr-review
-        rubocop_flags: '-c .rubocop.yml'
+        rubocop_flags: -c .rubocop.yml
