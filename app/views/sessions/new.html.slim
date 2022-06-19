@@ -1,8 +1,8 @@
 .sm_flex.sm_justify-center
   .p-4.sm_pt-20
-    .p-2.rounded.bg-gray-100
-      .px-2.border-b.border-brand-black.text-3xl
-        h1.font-bold = t('.log_in')
+    .p-2.pb-6.rounded.bg-gray-100
+      .px-2.border-b.border-brand-black
+        h1.text-3xl.font-bold = t('.log_in')
       .mt-4
         .sm_mx-4.overflow-auto
           = form_with(model: @login, scope: :user, url: login_path) do |f|
@@ -20,6 +20,3 @@
               => f.label(:password, class: 'block font-bold')
               = f.password_field(:password, class: 'block w-full p-1 border border-brand-black rounded')
             .actions.mt-4 = f.submit(t('.log_in'), class: 'p-2 rounded bg-brand-grain cursor-pointer')
-
-        .pt-4
-          => link_to(t('global.back'), root_path, class: 'underline')
