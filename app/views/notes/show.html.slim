@@ -33,4 +33,4 @@
           => link_to(t('global.back'), notes_path, class: 'underline')
           - unless @note.completed?
             '|
-            = link_to(t('.mark_as_completed'), complete_note_path(@note), class: 'underline', data: {'turbo-method': :patch} )
+            = button_to(t('.mark_as_completed'), complete_note_path(@note), method: :patch, class: 'p-2 rounded bg-brand-grain' )
