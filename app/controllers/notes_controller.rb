@@ -46,8 +46,15 @@ class NotesController < ApplicationController
 
     service = Notes::Complete.new(note: @note)
     if service.save
-      flash[:notice] = t('.success')
-      redirect_to notes_path, status: :see_other
+      respond_to do |format|
+        format.html do
+          flash[:notice] = t('.success')
+          redirect_to @note, status: :see_other
+        end
+        format.turbo_stream do
+          flash.now[:notice] = t('.success')
+        end
+      end
     else
       flash[:alert] = t('.error', errors: service.errors.full_messages.join(', '))
       redirect_to @note, status: :see_other

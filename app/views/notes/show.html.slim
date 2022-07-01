@@ -25,12 +25,12 @@
                 td.border.border-brand-black.p-2 = @note.ended_at
               tr
                 th.border.border-brand-black.p-2.text-left = @note.class.human_attribute_name('completed_at')
-                td.border.border-brand-black.p-2 = @note.completed_at
+                td#completed_at.border.border-brand-black.p-2 = @note.completed_at
               tr
                 th.border.border-brand-black.p-2.text-left = @note.class.human_attribute_name('files')
                 td.border.border-brand-black.p-2
                   - @note.files.each do |file|
                     = link_to(file.filename, rails_blob_path(file), class: 'underline')
-          .pt-4
-            - unless @note.completed?
+          - unless @note.completed?
+            #complete_button.pt-4
               = button_to(t('.mark_as_completed'), complete_note_path(@note), method: :patch, class: 'p-2 rounded bg-brand-grain' )
