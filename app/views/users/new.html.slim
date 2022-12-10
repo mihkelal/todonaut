@@ -5,7 +5,7 @@
         h1.text-3xl.font-bold = t('.register')
       .mt-4
         .sm_mx-4.overflow-auto
-          = form_with(model: @register, scope: :user, url: register_path(@register), data: { turbo: false }) do |f|
+          = form_with(model: @register, scope: :user, url: register_path(@register)) do |f|
             - if @register.errors.any?
               #error_explanation
                 h2 = t('errors.template.body')
@@ -23,5 +23,5 @@
               => f.label(:password_confirmation, class: 'block font-bold')
               = f.password_field(:password_confirmation, class: 'block w-full p-1 border border-brand-black rounded')
             .field.mt-2
-              = recaptcha_tags(hl: current_user_locale)
+              = recaptcha_v3(action: 'registration', hl: current_user_locale, turbolinks: true)
             .actions.mt-4 = f.submit(t('.register'), class: 'p-2 rounded bg-brand-grain cursor-pointer')
