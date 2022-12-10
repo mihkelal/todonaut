@@ -33,7 +33,8 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
     authorize(@note)
 
-    if validate_recaptcha && @note.update(note_params)
+    service = Notes::Update.new(note: @note, params: params)
+    if validate_recaptcha && service.save
       redirect_to @note, notice: t('.success')
     else
       render :edit, status: :unprocessable_entity
