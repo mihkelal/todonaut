@@ -1,4 +1,4 @@
-= form_with(model: note, data: { turbo: logged_in? }) do |f|
+= form_with(model: note) do |f|
   - if note.errors.any?
     #error_explanation
       h2 = t('errors.template.body')
@@ -23,7 +23,6 @@
       => f.label(:files, class: 'block font-bold')
       = f.file_field(:files, multiple: true, direct_upload: true, class: 'block')
     - unless logged_in?
-      .field.mt-2
-        = recaptcha_tags(hl: current_user_locale)
+      = recaptcha_v3(action: 'note_form', hl: current_user_locale, turbolinks: true)
 
     .actions.mt-4 = f.submit(class: 'p-2 rounded bg-brand-grain cursor-pointer')

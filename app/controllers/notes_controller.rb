@@ -66,7 +66,7 @@ class NotesController < ApplicationController
   def validate_recaptcha
     return true if helpers.logged_in?
 
-    verify_recaptcha(model: @note)
+    verify_recaptcha(model: @note, action: 'note_form', minimum_score: 0.3)
   end
 
   def note_params
