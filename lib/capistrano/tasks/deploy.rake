@@ -26,7 +26,6 @@ namespace :rails do
   desc 'open the rails console on each of the remote servers'
   task :console do
     on roles(:app) do
-      app_env = fetch(:app_env)
       rails_env = fetch(:rails_env)
       execute_interactively("bundle exec rails c -e #{rails_env}")
     end

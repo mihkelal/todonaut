@@ -15,7 +15,7 @@ class Register < ApplicationService
   end
 
   def user
-    @user ||= User.new(username: username, password: password, password_confirmation: password_confirmation)
+    @user ||= User.new(username:, password:, password_confirmation:)
   end
 
   private

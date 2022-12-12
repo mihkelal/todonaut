@@ -39,10 +39,10 @@ group :development do
   gem 'awesome_print'
   gem 'better_errors'
   gem 'capistrano', require: false
+  gem 'capistrano3-puma', require: false
   gem 'capistrano-asdf', require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano-rails', require: false
-  gem 'capistrano3-puma', require: false
   gem 'rack-mini-profiler'
 end
 

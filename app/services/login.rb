@@ -14,7 +14,7 @@ class Login < ApplicationService
   end
 
   def user
-    @user ||= User.find_by(username: username)&.authenticate(password)
+    @user ||= User.find_by(username:)&.authenticate(password)
   end
 
   private

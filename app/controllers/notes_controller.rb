@@ -14,6 +14,11 @@ class NotesController < ApplicationController
     @note = Note.new
   end
 
+  def edit
+    @note = Note.find(params[:id])
+    authorize(@note)
+  end
+
   def create
     @note = Note.new(note_params)
 
@@ -24,16 +29,11 @@ class NotesController < ApplicationController
     end
   end
 
-  def edit
-    @note = Note.find(params[:id])
-    authorize(@note)
-  end
-
   def update
     @note = Note.find(params[:id])
     authorize(@note)
 
-    service = Notes::Update.new(note: @note, params: params)
+    service = Notes::Update.new(note: @note, params:)
     if validate_recaptcha && service.save
       redirect_to @note, notice: t('.success')
     else

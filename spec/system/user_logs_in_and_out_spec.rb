@@ -18,7 +18,7 @@ RSpec.describe 'User logs in and out' do
     fill_in 'Username', with: user.username
     click_button 'Log in'
 
-    expect(page).to have_no_text 'Successfully logged in'
+    expect(page).not_to have_text 'Successfully logged in'
     expect(page).to have_text "Password can't be blank"
   end
 end

@@ -4,9 +4,9 @@ require 'rails_helper'
 
 RSpec.describe 'Registered user updates note' do
   let(:user) { create(:user) }
-  let(:note) { create(:note, :with_some_attributes, user: user, completed_at: nil) }
+  let(:note) { create(:note, :with_some_attributes, user:, completed_at: nil) }
   let(:other_note) { create(:note, :with_some_attributes, user: create(:user), completed_at: nil) }
-  let(:completed_note) { create(:note, :with_some_attributes, user: user, completed_at: Time.current) }
+  let(:completed_note) { create(:note, :with_some_attributes, user:, completed_at: Time.current) }
 
   before { login_as(user) }
 
