@@ -9,7 +9,7 @@ RSpec.describe 'Unregistered user updates note' do
 
   it 'when note is public', :js do
     visit edit_note_path(public_note)
-    fill_in 'Description', with: 'New description'
+    fill_in_rich_text_area with: 'New description'
     click_button 'Update Note'
 
     expect(page).to have_text 'Note successfully updated'

@@ -12,7 +12,8 @@ RSpec.describe 'Registered user updates note' do
 
   it 'when note belongs to user', :js do
     visit edit_note_path(note)
-    fill_in 'Description', with: 'New description'
+    fill_in_rich_text_area with: 'New description'
+
     click_button 'Update Note'
 
     expect(page).to have_text 'Note successfully updated'
