@@ -1,28 +1,44 @@
 # Todonaut
 
-Note manager with file uploading function.
+Note manager with rich text editing and file uploading function.
+
+## Stack, tools, libraries used
+* [Ruby on Rails](https://rubyonrails.org/)
+* [Import maps](https://github.com/rails/importmap-rails) for importing JavaScript modules
+* [Sprockets](https://guides.rubyonrails.org/asset_pipeline.html) for compiling assets
+* [Turbo](https://github.com/hotwired/turbo-rails) (from [Hotwire](https://hotwired.dev/)) for the speed of an SPA without having to write any JavaScript
+* PostgreSQL as database
+* reCAPTCHA for protection from fraud and abuse
 
 ## Prerequisites
 
 Before you begin, ensure you have installed the following on your machine:
 * `ruby` version `3.1.2`
+* `nodeJS`
 * `yarn`
-* `Postgresql`
+* `PostgreSQL`
 
 ## Installing
 
 ```shell
 bin/setup
-yarn
 ```
 
-This installs the necessary gems and npm packages and sets up the database.
+This installs the necessary gems and sets up the database.
 
 ## Usage
 
-Start the puma server:
+Start the puma server and the Tailwind CSS build watcher:
 ```shell
 rails s
+```
+```shell
+rails tailwindcss:watch
+```
+
+Alternatively, run both in the same shell with foreman:
+```shell
+bin/dev
 ```
 
 ## Contact
