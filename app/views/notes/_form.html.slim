@@ -12,7 +12,7 @@
       = f.text_field(:title, class: 'block w-full p-1 border border-brand-black rounded')
     .field.mt-2
       => f.label(:description, class: 'block font-bold')
-      = f.text_area(:description, class: 'block w-full p-1 border border-brand-black rounded')
+      = f.rich_text_area(:description)
     .field.mt-2
       => f.label(:started_at, class: 'block font-bold')
       = f.datetime_field(:started_at, class: 'block w-full p-1 border border-brand-black rounded')

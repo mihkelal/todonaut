@@ -3,4 +3,4 @@
     .px-2.border-b.border-brand-black.flex.items-center.justify-between
       h1.text-3xl.font-bold = t('.listing_notes')
       = link_to(t('.add_new_note'), new_note_path, class: 'underline')
-    ul.mt-4.md_mx-4.pl-6.overflow-auto.list-outside.list-disc = render @notes
+    ul.mt-4.md_mx-4.pl-6.overflow-auto = render @notes

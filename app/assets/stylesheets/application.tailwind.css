@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* I think it makes sense for these to have markers */
+ol {
+  @apply list-decimal;
+}
+ul {
+  @apply list-disc;
+}
+
 .alert {
   @apply bg-red-400;
 }

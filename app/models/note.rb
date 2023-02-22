@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class Note < ApplicationRecord
+  self.ignored_columns += %w[description]
+
+  has_rich_text :description
+
   has_many_attached :files
 
   belongs_to :user, optional: true

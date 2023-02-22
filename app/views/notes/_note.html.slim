@@ -3,4 +3,4 @@ li
     => note.title
     span.text-gray-500
       | -
-      =< truncate(note.description, length: 200)
+      =< truncate(note.description.to_plain_text, length: 200)

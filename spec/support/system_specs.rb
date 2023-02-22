@@ -10,8 +10,15 @@ module AuthenticationHelpers
   end
 end
 
+module RichTextAreaHelpers
+  def fill_in_rich_text_area(with:)
+    find('trix-editor').click.set(with)
+  end
+end
+
 RSpec.configure do |config|
   config.include(AuthenticationHelpers, type: :system)
+  config.include(RichTextAreaHelpers, type: :system)
 
   config.before(:each, type: :system) do
     driven_by(:rack_test)
