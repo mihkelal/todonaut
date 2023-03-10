@@ -4,6 +4,7 @@ head
   title Todonaut
   = csrf_meta_tags
   = csp_meta_tag
+  = preload_link_tag 'Inter-roman.latin.var.woff2'
   = stylesheet_link_tag 'tailwind', 'inter-font', 'application', 'data-turbo-track': 'reload'
   = javascript_importmap_tags
-  = javascript_include_tag 'direct_upload', 'data-turbo-track': 'reload'
+  = javascript_include_tag 'direct_upload', 'data-turbo-track': 'reload', async: true
