@@ -74,6 +74,7 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     airbrussh (1.4.1)
       sshkit (>= 1.6.1, != 1.7.0)
+    ar_lazy_preload (2.0.0)
     ast (2.4.2)
     awesome_print (1.9.2)
     bcrypt (3.1.18)
@@ -391,6 +392,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  ar_lazy_preload
   awesome_print
   bcrypt
   better_errors
