@@ -38,7 +38,7 @@ end
 
 group :development do
   gem 'awesome_print'
-  gem 'better_errors'
+  gem 'better_errors', '< 2.10' # 2.10 mistakenly requires sassc. Not going to add that.
   gem 'capistrano', require: false
   gem 'capistrano3-puma', require: false
   gem 'capistrano-asdf', require: false
