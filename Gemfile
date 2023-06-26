@@ -15,6 +15,7 @@ gem 'puma'
 gem 'pundit'
 gem 'rails', '~> 7.0.0'
 gem 'recaptcha'
+gem 'stackprof' # Must come becore sentry-rails for Sentry profiling
 gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'slim-rails'

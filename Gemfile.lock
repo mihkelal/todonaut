@@ -363,6 +363,7 @@ GEM
     sshkit (1.21.4)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
+    stackprof (0.2.25)
     tailwindcss-rails (2.0.29-arm64-darwin)
       railties (>= 6.0.0)
     tailwindcss-rails (2.0.29-x86_64-linux)
@@ -432,6 +433,7 @@ DEPENDENCIES
   sentry-ruby
   slim-rails
   sprockets-rails
+  stackprof
   tailwindcss-rails
   turbo-rails
   webdrivers
