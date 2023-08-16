@@ -15,8 +15,8 @@ class ApplicationController < ActionController::Base
     redirect_back(fallback_location: root_path, alert: t('global.not_authorized'))
   end
 
-  def switch_locale(&action)
+  def switch_locale(&)
     locale = helpers.current_user_locale
-    I18n.with_locale(locale, &action)
+    I18n.with_locale(locale, &)
   end
 end

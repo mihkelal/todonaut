@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.0'
+ruby '3.1.2'
 
+gem 'ar_lazy_preload'
 gem 'bcrypt'
 gem 'bootsnap', require: false
 gem 'draper'
@@ -15,8 +15,8 @@ gem 'puma'
 gem 'pundit'
 gem 'rails', '~> 7.0.0'
 gem 'recaptcha'
+gem 'stackprof' # Must come becore sentry-rails for Sentry profiling
 gem 'sentry-rails'
-gem 'sentry-ruby'
 gem 'slim-rails'
 gem 'sprockets-rails'
 gem 'tailwindcss-rails'
@@ -32,17 +32,17 @@ group :development, :test do
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
-  gem 'webdrivers'
+  gem 'selenium-webdriver'
 end
 
 group :development do
   gem 'awesome_print'
-  gem 'better_errors'
+  gem 'better_errors', '< 2.10' # 2.10 mistakenly requires sassc. Not going to add that.
   gem 'capistrano', require: false
+  gem 'capistrano3-puma', require: false
   gem 'capistrano-asdf', require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano-rails', require: false
-  gem 'capistrano3-puma', require: false
   gem 'rack-mini-profiler'
 end
 

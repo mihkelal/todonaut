@@ -8,31 +8,41 @@ AllCops:
   Exclude:
     - db/schema.rb
   NewCops: enable
-  TargetRubyVersion: 3.0
-  TargetRailsVersion: 7.0
 
-Layour/LineLength:
+Layout/LineLength:
   Max: 120
 
+Metrics/AbcSize:
+  Enabled: false
+
 Metrics/BlockLength:
-  Exclude:
-    - spec/system/*
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
 
 Metrics/MethodLength:
-  Exclude:
-    - db/migrate/*.rb
-  Max: 15
+  Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
 
 Rails:
   Enabled: true
 
-Rails/SkipsModelValidations:
-  Exclude:
-    - db/migrate/*
-
 RSpec/DescribeClass:
   Exclude:
     - spec/system/*
+
+Rails/SkipsModelValidations:
+  Exclude:
+    - db/migrate/*
 
 RSpec/ExampleLength:
   Max: 20
@@ -40,21 +50,5 @@ RSpec/ExampleLength:
 RSpec/MultipleExpectations:
   Max: 5
 
-Style/MixinUsage:
-  Exclude:
-    - bin/**
-
 Style/Documentation:
   Enabled: false
-
-Style/EmptyMethod:
-  EnforcedStyle: expanded
-
-Style/PercentLiteralDelimiters:
-  PreferredDelimiters:
-    default: ()
-    '%i': '[]'
-    '%I': '[]'
-    '%r': '{}'
-    '%w': '[]'
-    '%W': '[]'

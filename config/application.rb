@@ -11,7 +11,7 @@ require 'active_storage/engine'
 require 'action_controller/railtie'
 # require 'action_mailer/railtie'
 # require 'action_mailbox/engine'
-# require 'action_text/engine'
+require 'action_text/engine'
 require 'action_view/railtie'
 # require 'action_cable/engine'
 # require 'rails/test_unit/railtie'
@@ -36,7 +36,7 @@ module Todonaut
     # Don't generate system test files.
     config.generators.system_tests = nil
 
-    config.i18n.available_locales = %i[en ee vro]
+    config.i18n.available_locales = %i[en et vro]
 
     config.generators do |g|
       g.helper = false

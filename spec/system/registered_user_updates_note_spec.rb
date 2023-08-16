@@ -4,15 +4,16 @@ require 'rails_helper'
 
 RSpec.describe 'Registered user updates note' do
   let(:user) { create(:user) }
-  let(:note) { create(:note, :with_some_attributes, user: user, completed_at: nil) }
+  let(:note) { create(:note, :with_some_attributes, user:, completed_at: nil) }
   let(:other_note) { create(:note, :with_some_attributes, user: create(:user), completed_at: nil) }
-  let(:completed_note) { create(:note, :with_some_attributes, user: user, completed_at: Time.current) }
+  let(:completed_note) { create(:note, :with_some_attributes, user:, completed_at: Time.current) }
 
   before { login_as(user) }
 
   it 'when note belongs to user', :js do
     visit edit_note_path(note)
-    fill_in 'Description', with: 'New description'
+    fill_in_rich_text_area with: 'New description'
+
     click_button 'Update Note'
 
     expect(page).to have_text 'Note successfully updated'

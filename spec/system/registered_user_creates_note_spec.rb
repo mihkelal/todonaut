@@ -11,7 +11,7 @@ RSpec.describe 'Registered user creates note' do
   it 'with all fields filled', :js do
     visit new_note_path
     fill_in 'Title', with: note[:title]
-    fill_in 'Description', with: note[:description]
+    fill_in_rich_text_area with: note[:description]
     fill_in 'Started at', with: note[:started_at]
     fill_in 'Ended at', with: note[:completed_at]
     attach_file 'Files', 'spec/fixtures/text_file.txt'

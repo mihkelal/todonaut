@@ -19,7 +19,7 @@ RSpec.describe 'User registers' do
     fill_in 'Password', with: 'password'
     click_button 'Register'
 
-    expect(page).to have_no_text 'Successfully registered'
+    expect(page).not_to have_text 'Successfully registered'
     expect(page).to have_text "Password confirmation can't be blank"
   end
 end

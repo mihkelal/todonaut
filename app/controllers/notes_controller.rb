@@ -2,7 +2,7 @@
 
 class NotesController < ApplicationController
   def index
-    @notes = policy_scope(Note.with_attached_files).decorate
+    @notes = policy_scope(Note).decorate
   end
 
   def show
@@ -12,6 +12,11 @@ class NotesController < ApplicationController
 
   def new
     @note = Note.new
+  end
+
+  def edit
+    @note = Note.find(params[:id])
+    authorize(@note)
   end
 
   def create
@@ -24,16 +29,12 @@ class NotesController < ApplicationController
     end
   end
 
-  def edit
-    @note = Note.find(params[:id])
-    authorize(@note)
-  end
-
   def update
     @note = Note.find(params[:id])
     authorize(@note)
 
-    if validate_recaptcha && @note.update(note_params)
+    service = Notes::Update.new(note: @note, params:)
+    if validate_recaptcha && service.save
       redirect_to @note, notice: t('.success')
     else
       render :edit, status: :unprocessable_entity
@@ -46,8 +47,15 @@ class NotesController < ApplicationController
 
     service = Notes::Complete.new(note: @note)
     if service.save
-      flash[:notice] = t('.success')
-      redirect_to notes_path, status: :see_other
+      respond_to do |format|
+        format.html do
+          flash[:notice] = t('.success')
+          redirect_to @note, status: :see_other
+        end
+        format.turbo_stream do
+          flash.now[:notice] = t('.success')
+        end
+      end
     else
       flash[:alert] = t('.error', errors: service.errors.full_messages.join(', '))
       redirect_to @note, status: :see_other
@@ -59,7 +67,7 @@ class NotesController < ApplicationController
   def validate_recaptcha
     return true if helpers.logged_in?
 
-    verify_recaptcha(model: @note)
+    verify_recaptcha(model: @note, action: 'note_form', minimum_score: 0.3)
   end
 
   def note_params

@@ -3,8 +3,6 @@
 Rails.application.routes.draw do
   root controller: :notes, action: :index
 
-  get 'hello_world/index'
-
   resource :register, only: %i[create], controller: :users do
     get :new
   end
