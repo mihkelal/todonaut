@@ -1,11 +1,33 @@
 et:
+  activemodel:
+    attributes:
+      login:
+        password: Salasõna
+        username: Kasutajanimi
+      register:
+        password: Salasõna
+        password_confirmation: Salasõna kinnitus
+        username: Kasutajanimi
+    errors:
+      messages:
+        record_invalid: 'Valideerimine ebaõnnestus: %{errors}'
   activerecord:
+    attributes:
+      note:
+        completed_at: Täide viidud
+        description: Kirjeldus
+        ended_at: Lõpp
+        files: Failid
+        started_at: Algus
+        title: Pealkiri
     errors:
       messages:
         record_invalid: 'Valideerimine ebaõnnestus: %{errors}'
         restrict_dependent_destroy:
           has_one: Ei saa kirjet kustutada kuna sõltuv %{record} on olemas
           has_many: Ei saa kirjet kustutada kuna sõltuvad %{record} on olemas
+    models:
+      note: Märge
   date:
     abbr_day_names:
     - P
@@ -205,26 +227,6 @@ et:
       short: "%d.%m.%y, %H:%M"
     pm: pärast lõunat
 
-  activemodel:
-    attributes:
-      login:
-        password: Salasõna
-        username: Kasutajanimi
-      register:
-        password: Salasõna
-        password_confirmation: Salasõna kinnitus
-        username: Kasutajanimi
-  activerecord:
-    attributes:
-      note:
-        completed_at: Täide viidud
-        description: Kirjeldus
-        ended_at: Lõpp
-        files: Failid
-        started_at: Algus
-        title: Pealkiri
-    models:
-      note: Märge
   global:
     back: Tagasi
     incorrect_username_password: Vale kasutajanimi või salasõna

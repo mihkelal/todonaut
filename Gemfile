@@ -13,7 +13,7 @@ gem 'importmap-rails'
 gem 'pg', '~> 1.1'
 gem 'puma'
 gem 'pundit'
-gem 'rails', '~> 7.0.0'
+gem 'rails', '~> 7.1.0'
 gem 'recaptcha'
 gem 'stackprof' # Must come becore sentry-rails for Sentry profiling
 gem 'sentry-rails'

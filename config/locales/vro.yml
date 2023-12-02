@@ -1,11 +1,33 @@
 vro:
+  activemodel:
+    attributes:
+      login:
+        password: Salasõna
+        username: Pruukjanimi
+      register:
+        password: Salasõna
+        password_confirmation: Salasõna kimmätüs
+        username: Pruukjanimi
+    errors:
+      messages:
+        record_invalid: "Validiirminõ tsurku: %{errors}"
   activerecord:
+    attributes:
+      note:
+        completed_at: Täüde viidü
+        description: Seletüs
+        ended_at: Lõpp
+        files: Faili
+        started_at: Alostuss
+        title: Päälkiri
     errors:
       messages:
         record_invalid: "Validiirminõ tsurku: %{errors}"
         restrict_dependent_destroy:
           has_one: "Saa-ai kistuta: %{record} om olõmah"
           has_many: "Saa-ai kistuta: %{record} omma olõmah"
+    models:
+      note: Märgüs
   date:
     abbr_day_names:
     - Pü
@@ -205,26 +227,6 @@ vro:
       short: "%d.%m.%y, %H:%M"
     pm: pääle lõõnaht
 
-  activemodel:
-    attributes:
-      login:
-        password: Salasõna
-        username: Pruukjanimi
-      register:
-        password: Salasõna
-        password_confirmation: Salasõna kimmätüs
-        username: Pruukjanimi
-  activerecord:
-    attributes:
-      note:
-        completed_at: Täüde viidü
-        description: Seletüs
-        ended_at: Lõpp
-        files: Faili
-        started_at: Alostuss
-        title: Päälkiri
-    models:
-      note: Märgüs
   global:
     back: Tagasi
     incorrect_username_password: Võlss pruukjanimi vai salasõna
