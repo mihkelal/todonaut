@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :data_migrations do
   desc 'Migrate note description to action text'
 

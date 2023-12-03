@@ -16,7 +16,7 @@ gem 'pundit'
 gem 'rails', '~> 7.1.0'
 gem 'recaptcha'
 gem 'stackprof' # Must come becore sentry-rails for Sentry profiling
-gem 'sentry-rails'
+gem 'sentry-rails' # rubocop:disable Bundler/OrderedGems
 gem 'slim-rails'
 gem 'sprockets-rails'
 gem 'tailwindcss-rails'

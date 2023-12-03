@@ -6,7 +6,7 @@ module Notes
 
     def perform
       attach_files
-      update_attributes! # rubocop:disable Rails/ActiveRecordAliases
+      update_attributes!
     end
 
     private
