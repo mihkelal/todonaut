@@ -40,4 +40,4 @@ pidfile ENV.fetch('PIDFILE', 'tmp/pids/server.pid')
 plugin :tmp_restart
 
 # run the Tailwind watch process in the background.
-plugin :tailwindcss if ENV.fetch("RAILS_ENV", "development") == "development"
+plugin :tailwindcss if ENV.fetch('RAILS_ENV', 'development') == 'development'
