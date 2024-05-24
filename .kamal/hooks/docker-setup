@@ -1,7 +1,7 @@
-#!/usr/bin/env ruby
+#!/bin/sh
 
 # A sample docker-setup hook
 #
 # Sets up a Docker network which can then be used by the application’s containers
 
-ssh user@example.com docker network create kamal
+ssh root@34.138.76.248 docker network create todonaut-private
