@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# A sample docker-setup hook
+#
+# Sets up a Docker network which can then be used by the application’s containers
+
+ssh root@34.138.76.248 docker network create todonaut-private

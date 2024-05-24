@@ -10,6 +10,7 @@ gem 'bootsnap', require: false
 gem 'draper'
 gem 'google-cloud-storage'
 gem 'importmap-rails'
+gem 'kamal', require: false
 gem 'pg', '~> 1.1'
 gem 'puma'
 gem 'pundit'
