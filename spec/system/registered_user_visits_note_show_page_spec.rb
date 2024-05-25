@@ -17,6 +17,6 @@ RSpec.describe 'Registered user visits note show page' do
   it 'when note does not belong to user' do
     visit note_path(other_note)
     expect(page).to have_text 'You are not authorized to perform this action'
-    expect(page).not_to have_text other_note.title
+    expect(page).to have_no_text other_note.title
   end
 end

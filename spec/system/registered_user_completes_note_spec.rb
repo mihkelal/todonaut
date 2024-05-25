@@ -10,7 +10,7 @@ RSpec.describe 'Registered user completes note' do
 
   it 'when note belongs to user' do
     visit note_path(note)
-    click_button 'Mark as completed'
+    click_on 'Mark as completed'
 
     expect(page).to have_text 'Note successfully marked as completed'
   end

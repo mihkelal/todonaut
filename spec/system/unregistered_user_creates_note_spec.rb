@@ -12,7 +12,7 @@ RSpec.describe 'Unregistered user creates note' do
     fill_in 'Started at', with: note[:started_at]
     fill_in 'Ended at', with: note[:completed_at]
     attach_file 'Files', 'spec/fixtures/text_file.txt'
-    click_button 'Create Note'
+    click_on 'Create Note'
 
     expect(page).to have_text 'Note successfully created'
     expect(page).to have_text note[:title]

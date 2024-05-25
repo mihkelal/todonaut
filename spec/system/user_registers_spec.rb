@@ -8,7 +8,9 @@ RSpec.describe 'User registers' do
     fill_in 'Username', with: Faker::Internet.username
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
-    click_button 'Register'
+    within('main') do
+      click_on 'Register'
+    end
 
     expect(page).to have_text 'Successfully registered'
   end
@@ -17,9 +19,11 @@ RSpec.describe 'User registers' do
     visit register_path
     fill_in 'Username', with: Faker::Internet.username
     fill_in 'Password', with: 'password'
-    click_button 'Register'
+    within('main') do
+      click_on 'Register'
+    end
 
-    expect(page).not_to have_text 'Successfully registered'
+    expect(page).to have_no_text 'Successfully registered'
     expect(page).to have_text "Password confirmation can't be blank"
   end
 end

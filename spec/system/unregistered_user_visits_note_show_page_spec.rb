@@ -15,6 +15,6 @@ RSpec.describe 'Unregistered user visits note show page' do
   it 'when note is private' do
     visit note_path(private_note)
     expect(page).to have_text 'You are not authorized to perform this action'
-    expect(page).not_to have_text private_note.title
+    expect(page).to have_no_text private_note.title
   end
 end

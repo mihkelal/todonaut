@@ -5,7 +5,9 @@ module AuthenticationHelpers
     visit login_path
     fill_in 'Username', with: user.username
     fill_in 'Password', with: user.password
-    click_button 'Log in'
+    within('main') do
+      click_on 'Log in'
+    end
     expect(page).to have_text 'Successfully logged in'
   end
 end

@@ -1,8 +1,11 @@
 # Defaults https://github.com/bbatsov/rubocop/blob/master/config/default.yml
 require:
-  - rubocop-rails
+  - rubocop-capybara
+  - rubocop-factory_bot
   - rubocop-performance
+  - rubocop-rails
   - rubocop-rspec
+  - rubocop-rspec_rails
 
 AllCops:
   Exclude:

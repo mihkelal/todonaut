@@ -10,7 +10,7 @@ RSpec.describe 'Unregistered user visits notes index page' do
   it 'seeing only public notes' do
     visit notes_path
 
-    expect(page).not_to have_text users_note.title
+    expect(page).to have_no_text users_note.title
     expect(page).to have_text public_note.title
   end
 end

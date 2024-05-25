@@ -10,7 +10,7 @@ RSpec.describe 'Registered user visits notes index page' do
   before { login_as(user) }
 
   it 'seeing only his own notes' do
-    expect(page).not_to have_text public_note.title
+    expect(page).to have_no_text public_note.title
     expect(page).to have_text users_note.title
   end
 end
