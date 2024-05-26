@@ -1,7 +1,11 @@
 head
   meta charset='utf-8'
   meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'
-  title Todonaut
+  title
+    - if content_for?(:site_title)
+      = "#{truncate(yield(:site_title), length: 50)} | Todonaut"
+    - else
+      | Todonaut
   = csrf_meta_tags
   = csp_meta_tag
   = preload_link_tag 'Inter-roman.latin.var.woff2'
