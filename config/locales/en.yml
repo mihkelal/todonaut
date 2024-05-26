@@ -40,6 +40,10 @@ en:
       not_logged_in:
         log_in: Log in
         register: Register
+  locales:
+    en: English
+    et: Eesti keel
+    vro: Seto kiil
   notes:
     complete:
       error: 'Note not marked as completed: %{errors}'

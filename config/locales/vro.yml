@@ -166,6 +166,10 @@ vro:
       create: Luu vahtsõnõ %{model}
       submit: Pästä %{model}
       update: Luu %{model} ümbre
+  locales:
+    en: English
+    et: Eesti keel
+    vro: Seto kiil
   number:
     currency:
       format:

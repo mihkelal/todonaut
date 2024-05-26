@@ -166,6 +166,10 @@ et:
       create: Loo uus %{model}
       submit: Salvesta %{model}
       update: Uuenda objekti %{model}
+  locales:
+    en: English
+    et: Eesti keel
+    vro: Seto kiil
   number:
     currency:
       format:
