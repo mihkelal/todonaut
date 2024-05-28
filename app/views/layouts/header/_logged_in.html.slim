@@ -1,2 +1,2 @@
 span.mr-2.sm_mr-4 = t('.welcome', username: current_user.username)
-= link_to(t('.log_out'), logout_path, data: { 'turbo-method': :delete })
+= button_to(t('.log_out'), logout_path, method: :delete)
