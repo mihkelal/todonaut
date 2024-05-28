@@ -26,8 +26,6 @@ gem 'turbo-rails'
 group :development, :test do
   gem 'capybara'
   gem 'factory_bot_rails'
-  gem 'pry-byebug'
-  gem 'pry-rails'
   gem 'rspec-rails'
   gem 'rubocop', require: false
   gem 'rubocop-capybara', require: false
