@@ -14,8 +14,6 @@ Note manager with rich text editing and file uploading function.
 
 Before you begin, ensure you have installed the following on your machine:
 * `ruby` version `3.2.2`
-* `nodeJS`
-* `yarn`
 * `PostgreSQL`
 
 ## Installing
@@ -28,22 +26,14 @@ This installs the necessary gems and sets up the database.
 
 ## Usage
 
-Start the puma server and the Tailwind CSS build watcher:
+Start the puma server, which also starts the Tailwind CSS build watcher:
 ```shell
 rails s
-```
-```shell
-rails tailwindcss:watch
-```
-
-Alternatively, run both in the same shell with foreman:
-```shell
-bin/dev
 ```
 
 ## Contact
 
-If you want to contact me you can reach me at <mihkel.alavere@eesti.ee>.
+If you want to contact me you can reach me at <mihkelal@gmail.com>.
 
 ## License
 
