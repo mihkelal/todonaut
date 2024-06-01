@@ -13,7 +13,7 @@ Note manager with rich text editing and file uploading function.
 ## Prerequisites
 
 Before you begin, ensure you have installed the following on your machine:
-* `ruby` version `3.2.2`
+* `ruby` version `3.3.2`
 * `PostgreSQL`
 
 ## Installing
