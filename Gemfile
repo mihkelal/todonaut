@@ -40,6 +40,7 @@ end
 group :development do
   gem 'awesome_print'
   gem 'better_errors'
+  gem 'brakeman', require: false
   gem 'rack-mini-profiler'
 end
 
