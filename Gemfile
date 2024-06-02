@@ -14,7 +14,7 @@ gem 'kamal', require: false
 gem 'pg', '~> 1.1'
 gem 'puma'
 gem 'pundit'
-gem 'rails', '~> 7.1.0'
+gem 'rails', '~> 7.2.0.beta'
 gem 'recaptcha'
 gem 'stackprof' # Must come becore sentry-rails for Sentry profiling
 gem 'sentry-rails' # rubocop:disable Bundler/OrderedGems
@@ -40,6 +40,7 @@ end
 group :development do
   gem 'awesome_print'
   gem 'better_errors'
+  gem 'brakeman', require: false
   gem 'rack-mini-profiler'
 end
 

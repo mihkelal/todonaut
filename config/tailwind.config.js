@@ -3,9 +3,10 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   separator: '_',
   content: [
+    './public/*.html',
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
-    './app/views/**/*'
+    './app/views/**/*.{erb,haml,html,slim}'
   ],
   theme: {
     extend: {
@@ -24,7 +25,6 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/forms'),
-    require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/typography'),
     require('@tailwindcss/container-queries'),
   ]
