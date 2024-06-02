@@ -9,7 +9,7 @@ header.bg-gray-100.p-4.flex.items-center.justify-between
           - other_locales.each do |locale|
             li
               = button_to(locale_path, onclick: %Q{updateHtmlLocale("#{locale}")}, method: :patch, params: { locale: }, class: 'w-full') do
-                .px-4.py-2.hover_bg-gray-200
+                span.block.px-4.py-2.hover_bg-gray-200
                   = t("locales.#{locale}")
     - if logged_in?
       = render 'layouts/header/logged_in'
