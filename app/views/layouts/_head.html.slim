@@ -1,6 +1,7 @@
 head
   meta charset='utf-8'
   meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'
+  meta name='apple-mobile-web-app-capable' content='yes'
   title
     - if content_for?(:site_title)
       = "#{truncate(yield(:site_title), length: 50)} | Todonaut"
@@ -8,6 +9,11 @@ head
       | Todonaut
   = csrf_meta_tags
   = csp_meta_tag
+  = yield :head
+  link rel='manifest' href='/manifest.json'
+  link rel='icon' href='/icon.png' type='image/png'
+  link rel='icon' href='/icon.svg' type='image/svg+xml'
+  link rel='apple-touch-icon' href='/icon.png'
   = preload_link_tag 'Inter-roman.latin.var.woff2'
   = stylesheet_link_tag 'tailwind', 'inter-font', 'application', 'data-turbo-track': 'reload'
   = javascript_importmap_tags('es_modules')
