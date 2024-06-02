@@ -32,11 +32,12 @@ registry:
 # Inject ENV variables into containers (secrets come from .env).
 # Remember to run `kamal env push` after making changes!
 env:
-  # clear:
-  #   DB_HOST: 192.168.0.2
+  clear:
+    WEB_CONCURRENCY: 1
   secret:
     - RAILS_MASTER_KEY
     - DATABASE_URL
+    - SENTRY_DSN
 
 # Use a different ssh user than root
 # ssh:
