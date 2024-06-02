@@ -3,7 +3,7 @@
 class User < ApplicationRecord
   has_secure_password
 
-  enum :locale, I18n.available_locales.index_by(&:itself), prefix: true
+  enum :locale, I18n.available_locales.map(&:to_s).index_by(&:itself), prefix: true
 
   has_many :notes, dependent: :destroy
 
