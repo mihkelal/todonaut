@@ -2,14 +2,10 @@
 
 class SessionsController < ApplicationController
   def new
-    authorize(:session)
-
     @login = Login.new
   end
 
   def create
-    authorize(:session)
-
     @login = Login.new(user_params)
     if @login.save
       reset_session
@@ -21,8 +17,6 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    authorize(:session)
-
     helpers.log_out
     reset_session
     redirect_to notes_path, notice: t('.success'), status: :see_other

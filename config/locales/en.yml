@@ -48,6 +48,7 @@ en:
     complete:
       error: 'Note not marked as completed: %{errors}'
       success: Note successfully marked as completed.
+    completed_error: Note already completed
     create:
       success: Note successfully created.
     index:
@@ -55,6 +56,7 @@ en:
       listing_notes: Listing notes
     new:
       new_note: New note
+    not_found: Note not found.
     show:
       edit: Edit
       mark_as_completed: Mark as completed

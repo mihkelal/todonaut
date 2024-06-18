@@ -247,6 +247,7 @@ vro:
     complete:
       error: 'Es märgi märgüst tettüst: %{errors}'
       success: Märgüs tettüst märgit.
+    completed_error: Märgüs om jo tettüst märgit.
     create:
       success: Märgüs luud.
     index:
@@ -256,6 +257,7 @@ vro:
       new_note: Vahtsõnõ märgüs
     show:
       edit: Luu ümbre
+      not_found: Märgüst es lövvä.
       mark_as_completed: Märgi tettüst
     update:
       success: Märgüs ümbreluudu.
