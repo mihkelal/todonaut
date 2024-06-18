@@ -31,7 +31,6 @@ en:
   global:
     back: Back
     incorrect_username_password: Incorrect username or password
-    not_authorized: You are not authorized to perform this action.
   layouts:
     header:
       logged_in:

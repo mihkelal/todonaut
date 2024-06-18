@@ -234,7 +234,6 @@ vro:
   global:
     back: Tagasi
     incorrect_username_password: Võlss pruukjanimi vai salasõna
-    not_authorized: Sul olõ-õi sjoost õiguisi.
   layouts:
     header:
       logged_in:

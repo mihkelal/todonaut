@@ -234,7 +234,6 @@ et:
   global:
     back: Tagasi
     incorrect_username_password: Vale kasutajanimi või salasõna
-    not_authorized: Sul puuduvad selleks õigused.
   layouts:
     header:
       logged_in:
