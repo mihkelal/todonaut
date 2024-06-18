@@ -13,7 +13,6 @@ gem 'importmap-rails'
 gem 'kamal', require: false
 gem 'pg', '~> 1.1'
 gem 'puma'
-gem 'pundit'
 gem 'rails', '~> 7.2.0.beta'
 gem 'recaptcha'
 gem 'stackprof' # Must come becore sentry-rails for Sentry profiling
