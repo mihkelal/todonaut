@@ -23,12 +23,12 @@ RSpec.describe 'Registered user updates note' do
   it 'when note does not belong to user' do
     visit edit_note_path(other_note)
 
-    expect(page).to have_text 'You are not authorized to perform this action'
+    expect(page).to have_text 'Note not found'
   end
 
   it 'when note is completed' do
     visit edit_note_path(completed_note)
 
-    expect(page).to have_text 'You are not authorized to perform this action'
+    expect(page).to have_text 'Note already completed'
   end
 end

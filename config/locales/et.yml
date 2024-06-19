@@ -234,7 +234,6 @@ et:
   global:
     back: Tagasi
     incorrect_username_password: Vale kasutajanimi või salasõna
-    not_authorized: Sul puuduvad selleks õigused.
   layouts:
     header:
       logged_in:
@@ -247,6 +246,7 @@ et:
     complete:
       error: 'Märke täideviimisel ilmnesid vead: %{errors}'
       success: Märge täide viidud.
+    completed_error: Märge on juba täide viidud
     create:
       success: Märge loodud.
     index:
@@ -256,6 +256,7 @@ et:
       new_note: Uus märge
     show:
       edit: Muuda
+      not_found: Märget ei leitud.
       mark_as_completed: Märgi täideviiduks
     update:
       success: Märge muudetud.

@@ -2,14 +2,10 @@
 
 class UsersController < ApplicationController
   def new
-    authorize(:register)
-
     @register = Register.new
   end
 
   def create
-    authorize(:register)
-
     @register = Register.new(user_params)
 
     if validate_recaptcha && @register.save

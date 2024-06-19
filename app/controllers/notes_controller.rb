@@ -2,12 +2,12 @@
 
 class NotesController < ApplicationController
   def index
-    @notes = policy_scope(Note).decorate
+    @notes = Note.not_completed.where(user: current_user).decorate
   end
 
   def show
-    @note = Note.find(params[:id]).decorate
-    authorize(@note)
+    @note = Note.find_by(id: params[:id], user: current_user)&.decorate
+    render_not_found if @note.nil?
   end
 
   def new
@@ -15,8 +15,10 @@ class NotesController < ApplicationController
   end
 
   def edit
-    @note = Note.find(params[:id])
-    authorize(@note)
+    @note = Note.find_by(id: params[:id], user: current_user)
+    render_not_found and return if @note.nil?
+
+    render_completed_error if @note.completed?
   end
 
   def create
@@ -30,20 +32,22 @@ class NotesController < ApplicationController
   end
 
   def update
-    @note = Note.find(params[:id])
-    authorize(@note)
+    @note = Note.find_by(id: params[:id], user: current_user)
+    render_not_found and return if @note.nil?
 
     service = Notes::Update.new(note: @note, params:)
     if validate_recaptcha && service.save
       redirect_to @note, notice: t('.success')
     else
+      flash[:alert] = t('.error', errors: service.errors.full_messages.join(', '))
       render :edit, status: :unprocessable_entity
     end
   end
 
   def complete
-    @note = Note.find(params[:id])
-    authorize(@note)
+    @note = Note.find_by(id: params[:id], user: current_user)
+    render_not_found and return if @note.nil?
+    render_completed_error and return if @note.completed?
 
     service = Notes::Complete.new(note: @note)
     if service.save
@@ -68,6 +72,17 @@ class NotesController < ApplicationController
     return true if helpers.logged_in?
 
     verify_recaptcha(model: @note, action: 'note_form', minimum_score: 0.3)
+  end
+
+  def render_not_found
+    @notes = Note.not_completed.where(user: current_user).decorate
+    flash.now[:alert] = t('.not_found')
+    render :index
+  end
+
+  def render_completed_error
+    flash[:alert] = t('.completed_error')
+    redirect_to @note, status: :see_other
   end
 
   def note_params
