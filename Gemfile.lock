@@ -411,7 +411,7 @@ GEM
       concurrent-ruby (~> 1.0)
     uber (0.1.0)
     unicode-display_width (2.5.0)
-    uri (0.13.0)
+    uri (0.13.3)
     useragent (0.16.10)
     webrick (1.8.1)
     websocket (1.2.10)
